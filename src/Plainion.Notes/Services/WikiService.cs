@@ -41,7 +41,7 @@ namespace Plainion.Notes.Services
 
             bool createStartPage = true;
 
-            var fsBlob = Path.Combine( Environment.GetFolderPath( Environment.SpecialFolder.MyDocuments ), "Notes.db", "fs.bin" );
+            var fsBlob = Path.Combine( Environment.GetFolderPath( Environment.SpecialFolder.MyDocuments ), "Plainion", "Notes", "fs.bin" );
             if( File.Exists( fsBlob ) )
             {
                 using( var stream = new FileStream( fsBlob, FileMode.Open, FileAccess.Read ) )
