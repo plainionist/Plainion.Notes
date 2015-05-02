@@ -62,7 +62,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Plainion.Testing\Plainion.Testing.csproj">
       <Project>{148a9942-6b46-4905-b23b-200300d2c270}</Project>
-      <Name>Plainion.Wiki.Testing</Name>
+      <Name>Plainion.Testing</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plainion.Wiki.Html\Plainion.Wiki.Html.csproj">
       <Project>{e73f1159-68a8-4016-a32f-6b8da8a9e6a6}</Project>

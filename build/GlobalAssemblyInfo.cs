@@ -1,6 +1,6 @@
 using System.Reflection;
 
-[assembly: AssemblyDescription( "Blade.Net" )]
+[assembly: AssemblyDescription( "Plainion.Notes" )]
 [assembly: AssemblyCopyright( "Copyright © 2015" )]
-[assembly: AssemblyVersion( "5.3.0.0" )]
-[assembly: AssemblyProduct( "Blade.Net" )]
+[assembly: AssemblyVersion( "1.0.0.0" )]
+[assembly: AssemblyProduct( "Plainion.Notes" )]

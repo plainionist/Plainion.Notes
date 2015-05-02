@@ -49,8 +49,8 @@ namespace Plainion.Wiki.IntegrationTests
                 }
             }
 
-
-            return Path.Combine( Path.GetDirectoryName( TestFixture.GetType().Assembly.Location ), "TestData", testLevel, productNamespace.ToString() );
+            // Assembly.Location does not work with shadow copy
+            return Path.Combine( Path.GetDirectoryName( new Uri( TestFixture.Assembly.CodeBase ).LocalPath ), "TestData", testLevel, productNamespace.ToString() );
         }
 
         public static Lazy<string> TestDataRoot

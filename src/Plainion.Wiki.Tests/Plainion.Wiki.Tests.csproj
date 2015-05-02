@@ -139,7 +139,7 @@
     </ProjectReference>
     <ProjectReference Include="..\Plainion.Testing\Plainion.Testing.csproj">
       <Project>{148A9942-6B46-4905-B23B-200300D2C270}</Project>
-      <Name>Plainion.Wiki.Testing</Name>
+      <Name>Plainion.Testing</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plainion.Wiki\Plainion.Wiki.csproj">
       <Project>{2246B0B2-25F4-4DBB-8F7A-3544B008C957}</Project>
