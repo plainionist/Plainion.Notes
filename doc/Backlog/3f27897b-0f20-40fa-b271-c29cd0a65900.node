@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Node Id="3f27897b-0f20-40fa-b271-c29cd0a65900" Created="635443172087276055" LastModified="635443172710327553">
+  <Caption><![CDATA[Add multi-threading support]]></Caption>
+  <Content><![CDATA[- to Engine
+- Make WikiServer multi-threaded
+  - do we need working boxes?
+  - should we limit the threads? or just go for threadpool/TPL?
+  - how to handle caches?
+  - remove Auditing and "recent edit"?]]></Content>
+</Node>

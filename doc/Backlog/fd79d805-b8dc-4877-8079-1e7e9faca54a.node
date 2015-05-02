@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Node Id="fd79d805-b8dc-4877-8079-1e7e9faca54a" Created="635446868266892098" LastModified="635448972227717801" Origin="40151bca-0b3b-45ed-a0ba-ec6e6a101d54">
+  <Caption><![CDATA["referenced by" does not work with navigation]]></Caption>
+  <Content><![CDATA[- wiki does not know which page is the active one
+- in this setup this would be required to be done by wpf
+  - if we consider graphviz and "sidemap" macro
+  - should we think about a different solution?]]></Content>
+</Node>

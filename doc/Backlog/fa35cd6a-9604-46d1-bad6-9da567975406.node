@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Node Id="fa35cd6a-9604-46d1-bad6-9da567975406" Created="635430869542583700" LastModified="635430869728235863">
+  <Caption><![CDATA[Redesign of parser pipeline]]></Caption>
+  <Content><![CDATA[The current parser pipeline is monolitic, buggy and not extensible. Complete redesign is required.
+
+!! Comments
+
+* ANTLR usable?
+  * http://www.mediawiki.org/wiki/Markup_spec
+  * http://www.antlr.org/TML/index.tml (!!)
+* http://groups.google.com/group/il-antlr-interest/browse_thread/thread/565ec64a2bf6e1e2
+* http://www.codeproject.com/KB/aspnet/WikiNetParser.aspx
+
+!!! About StateMachines
+
+* http://aabs.wordpress.com/2008/06/26/state-machines-in-c-30-using-t4-templates/
+* http://martinfowler.com/dslwip/Intro.html#TheStateMachineFramework
+* http://simplestatemachine.codeplex.com/
+* WF
+  * http://odetocode.com/Articles/460.aspx
+  * http://msdn.microsoft.com/en-us/magazine/cc163281.aspx
+]]></Content>
+</Node>

@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\build\Globals.msbuild" />
+  <PropertyGroup>
+    <ProjectGuid>{14D360D4-8C85-436F-9897-C64CE6DF9B82}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Plainion.Wiki.UnitTests</RootNamespace>
+    <AssemblyName>Plainion.Wiki.Tests</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iron.Linq.Dynamic, Version=1.1.0.0, Culture=neutral, PublicKeyToken=98d7fdbd35f24bb6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Iron.Linq.Dynamic.1.1.0.0\lib\NET45\Iron.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq, Version=4.2.1502.911, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Moq.4.2.1502.0911\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Plainion.Core, Version=2.1.0.0, Culture=neutral, PublicKeyToken=11fdbc7b87b9a0de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Plainion.Core.2.1.0.0\lib\NET45\Plainion.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AstExtensions.cs" />
+    <Compile Include="AST\PageTests.cs" />
+    <Compile Include="AST\PlainTextTests.cs" />
+    <Compile Include="AST\QueryDefinitionTests.cs" />
+    <Compile Include="AST\TestBase.cs" />
+    <Compile Include="AST\PageNamespaceTest.cs" />
+    <Compile Include="AST\PageNameTest.cs" />
+    <Compile Include="Auditing\AuditingPageAccessDecoratorTests.cs" />
+    <Compile Include="Auditing\DefaultAuditingLogTests.cs" />
+    <Compile Include="Parser\MarkupParser_WikiWordsTests.cs" />
+    <Compile Include="Rendering\LinkReformattingStepTests.cs" />
+    <Compile Include="SiteConfigTests.cs" />
+    <Compile Include="DataAccess\AliasPageDescriptorTest.cs" />
+    <Compile Include="DataAccess\DistributedPageAccess_WithRegistrationsTest.cs" />
+    <Compile Include="DataAccess\DistributedPageAccessTest.cs" />
+    <Compile Include="DataAccess\PageRepositoryTest.cs" />
+    <Compile Include="DataAccess\PageCacheTest_FilledCache.cs" />
+    <Compile Include="DataAccess\InMemoryPageDescriptorTest.cs" />
+    <Compile Include="EngineTests.cs" />
+    <Compile Include="Rendering\AbstractRendererTest.cs" />
+    <Compile Include="Rendering\LambdaRenderActionTests.cs" />
+    <Compile Include="Rendering\GenericRenderActionTests.cs" />
+    <Compile Include="Rendering\PageAttributeTransformers\RecentEditsTransformerTests.cs" />
+    <Compile Include="Rendering\PageAttributeTransformers\ReverseLinksTransformerTests.cs" />
+    <Compile Include="Rendering\PageAttributeTransformers\SiteSearchTransformerTests.cs" />
+    <Compile Include="Rendering\PageAttributeTransformers\PageNameTransformerTests.cs" />
+    <Compile Include="Rendering\PageAttributeTransformers\PageEditTransformerTests.cs" />
+    <Compile Include="Rendering\PageBuildingStepTests.cs" />
+    <Compile Include="Rendering\QueryExecutionStepTests.cs" />
+    <Compile Include="Testing\FakeFactory.cs" />
+    <Compile Include="Testing\Helpers.cs" />
+    <Compile Include="Parser\MarkupParser_TestBase.cs" />
+    <Compile Include="Parser\MarkupParser_AttributeTest.cs" />
+    <Compile Include="Parser\ListParser_Test.cs" />
+    <Compile Include="Parser\QueryParserTests.cs" />
+    <Compile Include="Query\AttributeValueSelectClauseTests.cs" />
+    <Compile Include="Query\QueryEngineTests.cs" />
+    <Compile Include="Query\ReferencesPageMatcherTests.cs" />
+    <Compile Include="Query\DynamicLinqWhereClauseTests.cs" />
+    <Compile Include="Query\DynamicQueryExecutorTests.cs" />
+    <Compile Include="Query\FulltextMatcherTests.cs" />
+    <Compile Include="Query\MockFactory.cs" />
+    <Compile Include="Query\QueryIdentifierResolverTests.cs" />
+    <Compile Include="Query\QueryIteratorTests.cs" />
+    <Compile Include="Query\SectionSelectClauseTests.cs" />
+    <Compile Include="Query\ParentSelectClauseTests.cs" />
+    <Compile Include="Query\PageSelectClauseTests.cs" />
+    <Compile Include="Query\NoParentFromClauseTests.cs" />
+    <Compile Include="Query\QueryCompilerTests.cs" />
+    <Compile Include="Rendering\AttributePreProcessingStepTests.cs" />
+    <Compile Include="Rendering\AttributeTransformationStepTests.cs" />
+    <Compile Include="Testing\FakeQueryCompiler.cs" />
+    <Compile Include="Rendering\PageAttributeTransformerCatalogTests.cs" />
+    <Compile Include="Rendering\QueryCompilationStepTests.cs" />
+    <Compile Include="Rendering\RenderingPipelineTests.cs" />
+    <Compile Include="Rendering\RenderingStepCatalogTests.cs" />
+    <Compile Include="Testing\XAssert.cs" />
+    <Compile Include="AST\AchorTests.cs" />
+    <Compile Include="AST\CompiledQueryTest.cs" />
+    <Compile Include="AST\ContentTest.cs" />
+    <Compile Include="AST\TextBlockTest.cs" />
+    <Compile Include="AST\PageNodeTest.cs" />
+    <Compile Include="AST\PageLeafTest.cs" />
+    <Compile Include="AST\PageBodyTest.cs" />
+    <Compile Include="AST\PageAttributeTest.cs" />
+    <Compile Include="AST\ListItemTest.cs" />
+    <Compile Include="AST\BulletListTest.cs" />
+    <Compile Include="AST\LinkTest.cs" />
+    <Compile Include="AST\ParagraphTest.cs" />
+    <Compile Include="AST\HeadlineTest.cs" />
+    <Compile Include="AST\TestBench.cs" />
+    <Compile Include="DataAccess\PageCacheTest_EmptyCache.cs" />
+    <Compile Include="DataAccess\FlatFile\FlatFilePageHistoryAccessTest.cs" />
+    <Compile Include="DataAccess\FlatFile\FlatFilePageAccessTest.cs" />
+    <Compile Include="DataAccess\FlatFile\FlatFilePageDescriptorTest.cs" />
+    <Compile Include="Testing\FakePageDescriptor.cs" />
+    <Compile Include="Parser\MarkupParser_LinkTest.cs" />
+    <Compile Include="Parser\StructureParser_ListTest.cs" />
+    <Compile Include="Parser\StructureParser_HeadlineTest.cs" />
+    <Compile Include="Parser\StructureParser_ParagraphTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rendering\TestBase.cs" />
+    <Compile Include="TestSuiteSetup.cs" />
+    <Compile Include="Utils\AbstractPluginCatalogTests.cs" />
+    <Compile Include="Utils\AstExtensionsTests.cs" />
+    <Compile Include="Utils\AstFinderTests.cs" />
+    <Compile Include="Utils\AstWalkerTests.cs" />
+    <Compile Include="Utils\ContentBuilderTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Plainion.Httpd\Plainion.Httpd.csproj">
+      <Project>{0675C25D-C409-4918-BF37-BDB386FC96F6}</Project>
+      <Name>Plainion.Httpd</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plainion.Testing\Plainion.Testing.csproj">
+      <Project>{148A9942-6B46-4905-B23B-200300D2C270}</Project>
+      <Name>Plainion.Wiki.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plainion.Wiki\Plainion.Wiki.csproj">
+      <Project>{2246B0B2-25F4-4DBB-8F7A-3544B008C957}</Project>
+      <Name>Plainion.Wiki</Name>
+      <Private>false</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="License.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

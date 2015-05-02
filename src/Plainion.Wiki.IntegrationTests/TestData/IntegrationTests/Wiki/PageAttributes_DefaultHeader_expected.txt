@@ -1,0 +1,43 @@
+﻿ <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+ <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+   <head lang='en'>
+       <title>Page1       </title>
+      <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+      <style type='text/css'>
+          /* dirty hack for IE6. */
+           #quickbar {
+           position: absolute;
+           }
+      </style>
+   </head>
+   <script type='text/javascript' language='JavaScript'>
+       function edit() {
+           location.href = '?action=edit';
+       }
+   </script>
+   <body ondblclick='edit()'>
+       <div id='scrolling'>
+           <div id='header'>
+           </div>
+           <div id='content'>
+<h1 id='pagetitle'>Page1</h1>
+<p>
+<font size="4"><b>Sample Project</b></font>
+<div style="float:right">
+    
+<form method='get' action='/' style='display:inline;'>
+    Full search:  <input id='sitesearch' type='text' name='text' value='' />
+    <input type='hidden' name='action' value='search'/>
+</form>
+
+    
+<a href="/Page1?action=edit">Edit</a>
+
+</div>
+</p>
+           </div>
+       </div>
+       <div id='sidebar'>
+       </div>
+   </body>
+   </html>

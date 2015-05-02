@@ -1,0 +1,53 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:awe="http://schemas.awesomium.com/winfx"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:n="clr-namespace:Plainion.Notebook"
+                    xmlns:b="clr-namespace:Plainion.Notebook.Behaviors"
+                    xmlns:pn="http://github.com/ronin4net/plainion"
+                    xmlns:v="clr-namespace:Plainion.Notebook.Views">
+    <DataTemplate x:Key="PageView">
+        <v:Browser OpenNewWindowRequestedCommand="{Binding OpenNewWindowRequestedCommand}"
+                   Title="{Binding BrowserTitle, Mode=OneWayToSource}"
+                   Source="{Binding Uri, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                   TargetURL="{Binding TargetUri, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
+                   IsSourceView="{Binding IsSourceView}"
+                   NavigationSettings="{Binding NavigationSettings}"
+                   Preferences="{Binding BrowserPreferences}"
+                   SessionFolder="{Binding BrowserSession}"
+                   Background="White">
+            <i:Interaction.Behaviors>
+                <pn:RaiseCommandOnMouseGestureBehavior MouseButton="Left" ClickCount="1" Modifiers="Control" Command="{Binding OpenLinkInNewTabCommand}"/>
+                <pn:RaiseCommandOnMouseGestureBehavior MouseButton="Middle" ClickCount="1" Command="{Binding OpenLinkInNewTabCommand}"/>
+                <pn:RaiseCommandOnMouseGestureBehavior MouseButton="Left" ClickCount="1" Modifiers="Shift+Control" Command="{Binding OpenLinkInExternalBrowserCommand}"/>
+            </i:Interaction.Behaviors>
+            <v:Browser.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Command="BrowseBack"/>
+                    <MenuItem Command="BrowseForward"/>
+                    <MenuItem Command="Refresh" CommandParameter="False"/>
+                    <Separator />
+                    <MenuItem Header="View Page Source" Command="{Binding ViewPageSourceCommand}"/>
+                    <Separator />
+                    <MenuItem Command="Print"/>
+                </ContextMenu>
+            </v:Browser.ContextMenu>
+            <v:Browser.LinkContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Open Link in New Tab" Command="{Binding OpenLinkInNewTabCommand}" InputGestureText="Ctrl+LMB"/>
+                    <MenuItem Header="Open Link in External Browser" Command="{Binding OpenLinkInExternalBrowserCommand}" InputGestureText="Ctrl+Shift+LMB"/>
+                    <Separator />
+                    <MenuItem Command="{x:Static awe:WebControlCommands.CopyLinkAddress}"/>
+                    <Separator />
+                    <MenuItem Command="BrowseBack"/>
+                    <MenuItem Command="BrowseForward"/>
+                    <MenuItem Command="Refresh" CommandParameter="False"/>
+                    <Separator />
+                    <MenuItem Header="View Page Source" Command="{Binding ViewPageSourceCommand}"/>
+                    <Separator />
+                    <MenuItem Command="Print"/>
+                </ContextMenu>
+            </v:Browser.LinkContextMenu>
+        </v:Browser>
+    </DataTemplate>
+</ResourceDictionary>

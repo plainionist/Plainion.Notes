@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Node Id="2698f693-d4f3-419a-a5d1-1f61d98c0cb4" Created="635430870700618007" LastModified="635430870769718550">
+  <Caption><![CDATA[Writing wiki pages from AST]]></Caption>
+  <Content><![CDATA[
+* for some features we need a possiblity to write an AST back to the wiki page in wiki language
+  * "Update TOC" in papyrus
+  * Special "silverlight" UI for FYM backlog re-organization
+* find a design to 
+  * separate AST objects from the wiki language writer
+  * ensure by design that each AST element also has a writer (we dont want to have an exception or a
+    non-writable object when writing the AST back)
+
+
+]]></Content>
+</Node>

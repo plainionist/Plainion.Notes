@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Node Id="42f06f7b-6c5e-4e51-82c3-aad87729e0ef" Created="635439649979974260" LastModified="635439652104049833">
+  <Caption><![CDATA[RILP - ResourceInterLinkProtocol]]></Caption>
+  <Content><![CDATA[i want to link from one Blade.Notes page to one in another project 
+I want to link from Blade.Forest node to Blade.Nodes page (and vice versa)
+I want to link to excel/pdf/...
+
+If the resource is already open in one program no new program should be started.
+If the resource is not yet open i want to have it started automatically.]]></Content>
+</Node>

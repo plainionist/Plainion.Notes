@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Node Id="687d70ce-ae7e-4c3c-a15b-ef0898902efb" Created="635430870526322306" LastModified="635430870608112716">
+  <Caption><![CDATA[Separate AST and AstBuilder]]></Caption>
+  <Content><![CDATA[
+Actually we need to separate the AST from the AstBuilder.
+
+The CanConsume() and Consume() methods have to responsibilities:
+
+# enforce certain syntax
+# help to build up the AST from the Wiki syntax
+
+We should separate both responsibilities because during rendering we will
+reformat the AST and allow much more flexibility in the syntax than at the
+building stage. E.g.: during rendering a TextBlock definitively can contain
+a list or a link.
+
+
+]]></Content>
+</Node>

@@ -1,0 +1,392 @@
+body { 
+  font-family: Arial, Lucida Sans, Helvetica, sans-serif;
+  margin: 0px; 
+  padding: 0px; 
+/* orig font-size smaller, qb none, and bar 1.0em*/
+}
+/* special text */
+h1.pagetitle {
+	font-family:Arial, Lucida Sans, Helvetica, sans-serif;
+/*	font-size:2.25em;*/
+	margin:0em;
+	padding:0em;
+	margin-bottom:0.25em;
+	font-size:1.70em;
+	}
+/* set colour for: top bar links; sidebar links; QuickNav text */	
+#header span , #header a , #sidebar a, #footer a {
+	color:#FFFFFF;
+	text-decoration:none;
+	}
+#header span:hover , #header a:hover , #sidebar a:hover, #footer a:hover {
+	color:#FFFFFF;
+	text-decoration:underline;
+	}
+/* ******************************************* structural */
+#scrolling {
+	/* container div for all scrolling content 
+	-- that is, everything except the sidebar 
+	this is just to set the left margin (= sidebar width) in only one place */
+	margin-left: 7.5em; /* !! QB WIDTH, ORIG 9 */
+}
+
+html>body #scrolling {
+	margin-left: 6.75em; /* !! QB WIDTH, ORIG 9 */
+}
+
+head:first-child+body #scrolling {
+	margin-left: 7.25em; /* !! QB WIDTH, ORIG 9 */
+}
+
+/* ======================== HEADER BAR */
+div.bar {
+	/* sets colour for both header and footer */
+        font-family: Arial, Lucida Sans, Helvetica, sans-serif;
+        background-color: rgb(110,110,241);
+        color: #ffffff;
+	padding: 0.5em;
+        font-size: smaller;
+	}
+#header {
+	padding-top:0.25em;
+        padding-bottom:0.75em;
+	min-height:18px; 
+	}
+#header div.lefthalf {
+	text-align:left;
+	}
+#header div.righthalf {
+	float:right;
+	}
+#header form.inline { display: inline; padding:1px;
+	}
+	
+/* ======================== FOOTER */
+#footer {
+/*	text-align:center;*/
+  font-family: Arial, Lucida Sans, Helvetica, sans-serif;
+  background-color: rgb(110,110,241);
+  color: #FFFFFF;
+  padding-top:0.25em;
+  padding-bottom:0.25em;
+}
+ 
+/* ======================== CONTENT */
+#content {
+	padding: 0.5em;
+	}
+/* ======================== SIDEBAR */
+#sidebar {
+  font-family: Arial, Lucida Sans, Helvetica, sans-serif;
+	width: 8.7em; /* !! QB WIDTH */
+	top: 0px;	left: 0px;	
+	height:100%;
+	padding: 0em;
+	padding-left: 0.3em;
+	margin: 0em;
+	overflow:hidden;
+        color:#FFFFFF;
+        background-color: #004080;
+        font-size: smaller;
+	}
+
+#sidebar a:link {
+  font-weight:bold;
+  color:#FFFFFF;
+}
+
+#sidebar a:hover {
+  font-weight:bold;
+  color:#FFFFFF;
+}
+
+#sidebar a:visited {
+  color:#FFFFFF;
+  font-weight:bold;
+}
+
+/* hack zone for position:fixed */
+#sidebar {
+	position: absolute; /* all */
+	position/* */:/**/fixed;
+	position: /**/fixed;
+	}
+#sidebar p {
+	margin: 0em;
+	padding:0em;
+	}
+
+#sidebar div.qbsitename {
+	text-align:center;
+	line-height:1em;
+	padding-bottom:0.5em;
+	}
+#sidebar div.qbsitename h1 {
+	margin: 0em;
+	padding:0em;
+/*	font-size:1.125em;*/
+	color:#FFFFFF;
+	}
+#sidebar div.qbsitename p {
+	font-size:0.9em; /*.85 isn't bolded on opera*/
+	line-height:1em;
+	font-weight:bold;
+	color:#FFFFFF;
+	}
+
+#sidebar .fontsizer {
+	padding:1px;
+/*	font-size:0.6em;*/
+}
+#sidebar div.qbsection {
+	margin: 0em;
+	padding: 0.5em;
+	border-top: 1px solid #fff;
+/*	font-size:0.9em;*/
+	}
+
+/*****  Wiki styles ******/
+code {
+font-family: courier, Arial, Lucida Sans, Helvetica, sans-serif;
+font-size: 10pt;
+}
+
+div.command{
+color:#2222ff;
+font-weight:bold;
+font-style:italic;
+}
+
+div.wikisource{
+background: #ffffff;
+color:black;
+border: solid black 1px;
+	font-size: 10pt;		
+/*overflow: scroll;*/ /*auto;*/		
+padding: 3px;		
+/*height: 75%;*/		
+/*width: 97%;*//*950px;	*/
+}
+
+span.characters{
+color:#ff00ff;
+}
+
+span.classes{
+color:#0000ff;
+font-weight:bold;
+}
+
+span.comments{
+color:#008000;
+}
+
+span.keywords{
+color:#0000ff;
+}
+
+span.numbers{
+color:#848200;
+}
+
+span.operators{
+color:#840000;
+}
+
+span.strings{
+color:#ff00ff;
+}
+
+span.special{
+color:#2222ff;
+font-weight:bold;
+font-style:italic;
+}
+
+h1.wiki
+{
+  font-size: 18pt;
+}
+
+h2.wiki 
+{
+  font-size: 16pt;
+}
+
+h3.wiki 
+{
+  font-size: 14pt;
+}
+
+
+/* for some reason text in the table won't take over the fontsize from the body */
+table {
+  font-size: small;
+}
+
+table.wikiryan
+{
+  width: 90%;
+  background: #999999;
+
+  margin-top: 0em;
+  margin-bottom: .3em;
+  background: #ffffff;
+}
+
+th.wikiryan
+{ 
+  padding: 2px 4px;
+  background: #dddddd;
+  text-align: left;
+  vertical-align: top;
+  margin: .25em;
+  font-size: 120%;
+}
+
+table.diffheader
+{
+  border-collapse:collapse;
+}
+
+div.diffheader
+{
+font-weight:bolder;
+}
+
+.diffheading
+{
+font-weight:bolder;
+font-size:14pt;
+padding:6px;
+text-align:center;
+}
+td.diffa
+{
+  background: #22AA22;
+  color: #FFFFFF;
+}
+
+td.diffr
+{
+  background: #FF2222;
+  color: #FFFFFF;
+}
+
+td.diffc
+{
+  background: #4444FF;
+  color: #FFFFFF;
+}
+
+td.diffc2
+{
+  background: #222299;
+  color: #FFFFFF;
+}
+
+td.wikiryan
+{ 
+  margin: .25em;
+  padding: 2px 4px;
+  background: #eeeeee;
+  font-size: 100%;
+  vertical-align: top;
+}
+
+tr.wikiryan
+{ 
+  margin: .25em;
+  vertical-align: top;
+}
+
+
+pre.wiki {
+  font-size:8pt;
+}
+
+ul.wikirevisions {
+}
+
+div.wikirevisionsintro {
+}
+
+p.wikirecentchangesheading {
+  font-weight:bold;
+}
+
+h3.wiki
+{
+  font-size: 130%;
+  font-weight: bold;
+}
+   
+h4.wiki
+{
+  font-size: 120%;
+}
+   
+h5.wiki
+{
+  font-size: 100%;
+  font-weight: bold;
+}
+ 
+h6.wiki
+{
+  font-size: 100%;
+  color: red;
+  font-weight: bold;
+}
+ 
+h7.wiki
+{
+  font-size: 100%;
+  font-weight: bold;
+}
+
+img.wikih1 {
+border:0;
+margin:0px;
+padding:0px;
+}
+
+
+img {
+  border: 0px;
+}
+
+h3 {
+  margin-bottom: 5px;
+}
+
+a {
+  font-family    : Arial, Helvetica, sans-serif;
+  color          : #00529C;
+  text-decoration: none;
+}
+
+a:active {
+  font-family    : Arial, Helvetica, sans-serif;
+  color          : #313063;
+}
+
+a:visited {
+  font-family    : Arial, Helvetica, sans-serif;
+  color          : #00376A;
+}
+
+a:hover {
+  font-family    : Arial, Helvetica, sans-serif;
+  text-decoration: underline;
+}
+
+ul {
+  margin-top: 0px;
+/*  margin-left: 20px;*/
+}
+
+hr {
+  color: rgb(48, 100, 127);
+  width: 96%;
+}

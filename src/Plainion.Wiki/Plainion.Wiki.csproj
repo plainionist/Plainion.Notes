@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\build\Globals.msbuild" />
+  <PropertyGroup>
+    <ProjectGuid>{2246B0B2-25F4-4DBB-8F7A-3544B008C957}</ProjectGuid>
+    <RootNamespace>Plainion.Wiki</RootNamespace>
+    <AssemblyName>Plainion.Wiki</AssemblyName>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DocumentationFile>$(OutputPath)\Plainion.Wiki.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DocumentationFile>$(OutputPath)\Plainion.Wiki.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iron.Linq.Dynamic">
+      <HintPath>..\..\packages\Iron.Linq.Dynamic.1.1.0.0\lib\NET45\Iron.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Plainion.Core, Version=2.1.0.0, Culture=neutral, PublicKeyToken=11fdbc7b87b9a0de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Plainion.Core.2.1.0.0\lib\NET45\Plainion.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Page.Header" />
+    <None Include="packages.config" />
+    <None Include="Resources\Page.SideBar" />
+    <Compile Include="AST\Anchor.cs" />
+    <Compile Include="AST\Content.cs" />
+    <Compile Include="AST\CompiledQuery.cs" />
+    <Compile Include="AST\HighlightText.cs" />
+    <Compile Include="AST\PreformattedText.cs" />
+    <Compile Include="AST\QueryDefinition.cs" />
+    <Compile Include="AST\SiteSearchForm.cs" />
+    <Compile Include="AST\PageNamespace.cs" />
+    <Compile Include="AST\LineBreak.cs" />
+    <Compile Include="AST\PageAttribute.cs" />
+    <Compile Include="AST\Markup.cs" />
+    <Compile Include="AST\PageBodyType.cs" />
+    <Compile Include="AST\PageName.cs" />
+    <Compile Include="AST\TextBlock.cs" />
+    <Compile Include="AST\PageLeaf.cs" />
+    <Compile Include="AST\PageNode.cs" />
+    <Compile Include="AST\ListItem.cs" />
+    <Compile Include="AST\Link.cs" />
+    <Compile Include="AST\BulletList.cs" />
+    <Compile Include="AST\Headline.cs" />
+    <Compile Include="AST\PageBody.cs" />
+    <Compile Include="AST\Paragraph.cs" />
+    <Compile Include="AST\PlainText.cs" />
+    <Compile Include="Auditing\AuditingPageAccessDecorator.cs" />
+    <Compile Include="Auditing\AbstractAction.cs" />
+    <Compile Include="Auditing\DefaultAuditingLog.cs" />
+    <Compile Include="Auditing\DeleteAction.cs" />
+    <Compile Include="Auditing\IAuditingLog.cs" />
+    <Compile Include="Auditing\CreateAction.cs" />
+    <Compile Include="Auditing\NullAuditingLog.cs" />
+    <Compile Include="Auditing\UpdateAction.cs" />
+    <Compile Include="Auditing\IAuditingAction.cs" />
+    <Compile Include="ComposerExtensions.cs" />
+    <Compile Include="CompositionContractNames.cs" />
+    <Compile Include="DataAccess\IPageTransformer.cs" />
+    <Compile Include="DataAccess\NullPageHistoryAccess.cs" />
+    <Compile Include="DataAccess\NullPageTransformer.cs" />
+    <Compile Include="DataAccess\PageAccessDecoratorBase.cs" />
+    <Compile Include="DefaultFlatFileCompositionDescriptor.cs" />
+    <Compile Include="DefaultErrorPageHandler.cs" />
+    <Compile Include="IEngine.cs" />
+    <Compile Include="Parser\IPageContentParser.cs" />
+    <Compile Include="Parser\WikiWords.cs" />
+    <Compile Include="Parser\WikiText\WikiTextParser.cs" />
+    <Compile Include="Rendering\LinkReformattingStep.cs" />
+    <Compile Include="Rendering\PageAttributeTransformers\PageBodyEditTransformer.cs" />
+    <Compile Include="Rendering\PageAttributeTransformers\SiteMapTransformer.cs" />
+    <Compile Include="SiteConfig.cs" />
+    <Compile Include="DataAccess\AliasPageDescriptor.cs" />
+    <Compile Include="DataAccess\DistributedPageAccess.cs" />
+    <Compile Include="DataAccess\FlatFile\FlatFilePageAccess.cs" />
+    <Compile Include="DataAccess\FlatFile\FlatFilePageHistoryAccess.cs" />
+    <Compile Include="DataAccess\IPageHistoryAccess.cs" />
+    <Compile Include="DataAccess\PageRepository.cs" />
+    <Compile Include="DataAccess\PageCache.cs" />
+    <Compile Include="Parser\WikiText\QueryParser.cs" />
+    <Compile Include="Query\AlwaysTrueFromClause.cs" />
+    <Compile Include="Query\AttributeValueSelectClause.cs" />
+    <Compile Include="Query\AbstractMultiSelectClause.cs" />
+    <Compile Include="Query\NodeSelectClause.cs" />
+    <Compile Include="Query\PageSelectClause.cs" />
+    <Compile Include="Query\ParentSelectClause.cs" />
+    <Compile Include="Query\DynamicLinqWhereClause.cs" />
+    <Compile Include="Query\DynamicQueryExecutor.cs" />
+    <Compile Include="Query\IFromClause.cs" />
+    <Compile Include="Query\IQueryIterator.cs" />
+    <Compile Include="Query\ISelectClause.cs" />
+    <Compile Include="Query\IWhereClause.cs" />
+    <Compile Include="Query\NoParentFromClause.cs" />
+    <Compile Include="Query\QueryIterator.cs" />
+    <Compile Include="Query\QueryIdentifierResolver.cs" />
+    <Compile Include="Query\DynamicExpressionMatcher.cs" />
+    <Compile Include="Query\QueryCompiler.cs" />
+    <Compile Include="Query\FulltextMatcher.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="DataAccess\FlatFile\FlatFilePageDescriptor.cs" />
+    <Compile Include="IErrorPageHandler.cs" />
+    <Compile Include="DataAccess\IPageAccess.cs" />
+    <Compile Include="DataAccess\IPageDescriptor.cs" />
+    <Compile Include="DataAccess\InMemoryPageDescriptor.cs" />
+    <Compile Include="Parser\ParserPipeline.cs" />
+    <Compile Include="Query\IQueryMatcher.cs" />
+    <Compile Include="Query\PageHandle.cs" />
+    <Compile Include="Query\QueryEngine.cs" />
+    <Compile Include="Query\ReferencesPageMatcher.cs" />
+    <Compile Include="EngineContext.cs" />
+    <Compile Include="Query\SectionSelectClause.cs" />
+    <Compile Include="Rendering\AttributeRenderingSettings.cs" />
+    <Compile Include="Rendering\CloneStep.cs" />
+    <Compile Include="Rendering\AttributeTransformationStep.cs" />
+    <Compile Include="Rendering\IRenderActionMetadata.cs" />
+    <Compile Include="Rendering\IPageAttributeTransformerMetadata.cs" />
+    <Compile Include="Rendering\IRenderingStepMetadata.cs" />
+    <Compile Include="Rendering\LambdaRenderAction.cs" />
+    <Compile Include="Rendering\PageAttributeTransformerCatalog.cs" />
+    <Compile Include="Rendering\RenderingStage.cs" />
+    <Compile Include="Rendering\RenderingStepAttribute.cs" />
+    <Compile Include="Rendering\QueryCompilationStep.cs" />
+    <Compile Include="Rendering\AttributePreProcessingStep.cs" />
+    <Compile Include="Rendering\AbstractRenderer.cs" />
+    <Compile Include="Rendering\RenderActionAttribute.cs" />
+    <Compile Include="Rendering\QueryExecutionStep.cs" />
+    <Compile Include="Rendering\IPageAttributeTransformer.cs" />
+    <Compile Include="Rendering\PageAttributeTransformerAttribute.cs" />
+    <Compile Include="Rendering\PageAttributeTransformers\RecentEditsTransformer.cs" />
+    <Compile Include="Rendering\PageAttributeTransformers\ReverseLinksTransformer.cs" />
+    <Compile Include="Rendering\PageAttributeTransformers\PageEditTransformer.cs" />
+    <Compile Include="Rendering\PageAttributeTransformers\SiteSearchTransformer.cs" />
+    <Compile Include="Rendering\PageAttributeTransformers\PageNameTransformer.cs" />
+    <Compile Include="Rendering\PageBuildingStep.cs" />
+    <Compile Include="Rendering\IRenderingStep.cs" />
+    <Compile Include="Rendering\IRenderActionContext.cs" />
+    <Compile Include="Rendering\RenderingPipeline.cs" />
+    <Compile Include="Rendering\RenderingStepCatalog.cs" />
+    <Compile Include="Resources\ResourceNames.cs" />
+    <Compile Include="Utils\AstExtensions.cs" />
+    <Compile Include="Utils\ContentBuilder.cs" />
+    <Compile Include="Rendering\GenericRenderAction.cs" />
+    <Compile Include="Rendering\IRenderAction.cs" />
+    <Compile Include="Rendering\RenderingContext.cs" />
+    <Compile Include="AST\Page.cs" />
+    <Compile Include="Query\QueryMatch.cs" />
+    <Compile Include="Utils\AstWalker.cs" />
+    <Compile Include="Parser\WikiText\ListParser.cs" />
+    <Compile Include="Parser\WikiText\MarkupParser.cs" />
+    <Compile Include="Parser\WikiText\StructureParser.cs" />
+    <Compile Include="Parser\WikiText\TextTokenizer.cs" />
+    <Compile Include="Rendering\IRenderer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Utils\AstFinder.cs" />
+    <Compile Include="Utils\AbstractPluginCatalog.cs" />
+    <Compile Include="Utils\IPluginCatalog.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\main.js" />
+    <EmbeddedResource Include="Resources\style.css" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

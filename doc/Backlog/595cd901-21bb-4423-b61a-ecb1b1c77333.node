@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Node Id="595cd901-21bb-4423-b61a-ecb1b1c77333" Created="635430870966803133" LastModified="635430871062358598">
+  <Caption><![CDATA[Search PDF attachments]]></Caption>
+  <Content><![CDATA[
+- we will need to search PDF files soon or later as we cannot copy everything into the wiki. some parts will just be scanned and added
+- therefore we will need to search PDFs
+
+!! References
+
+- http://www.codeproject.com/KB/IP/Searcharoo_4.aspx
+- http://itextpdf.com/
+- http://help.quickpdflibrary.com/questions/381/find-a-specific-word-in-a-pdf-file.html
+
+]]></Content>
+</Node>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tree>
+  <Node Id="1f0f5da2-0e2c-49ff-8afe-25f674a447d8">
+    <Caption><![CDATA[Backlog]]></Caption>
+    <Node Id="3e408873-3183-4237-ad13-2167cb190900">
+      <Caption><![CDATA[Notebook]]></Caption>
+      <Node Id="d3ef68af-b799-41fb-9f11-aff07f7cae98">
+        <Caption><![CDATA[autocompletion when adding links]]></Caption>
+      </Node>
+      <Node Id="177688a3-b7b8-42b9-8076-b9a45e6ecf07">
+        <Caption><![CDATA[page layout template]]></Caption>
+      </Node>
+      <Node Id="c8f931f9-8cbe-4d71-9ef6-c5cdb9976843">
+        <Caption><![CDATA[who knows about project layout?]]></Caption>
+      </Node>
+      <Node Id="b64217b5-6085-469f-a0c6-4520e5e70155">
+        <Caption><![CDATA[recent edits do not work with navigation bar]]></Caption>
+      </Node>
+      <Node Id="fd79d805-b8dc-4877-8079-1e7e9faca54a">
+        <Caption><![CDATA["referenced by" does not work with navigation]]></Caption>
+      </Node>
+      <Node Id="0c184ea6-bf1b-4a0a-9f25-de74018494ca">
+        <Caption><![CDATA[loading saved layout is slow]]></Caption>
+      </Node>
+      <Node Id="354606af-74c1-4c2e-a748-8af47a04fd70">
+        <Caption><![CDATA[tool autohide on startup]]></Caption>
+      </Node>
+    </Node>
+    <Node Id="42f06f7b-6c5e-4e51-82c3-aad87729e0ef">
+      <Caption><![CDATA[RILP - ResourceInterLinkProtocol]]></Caption>
+    </Node>
+    <Node Id="7a54b17f-50b9-4204-aaef-79a464d5dc40">
+      <Caption><![CDATA[Wiki]]></Caption>
+      <Node Id="3f27897b-0f20-40fa-b271-c29cd0a65900">
+        <Caption><![CDATA[Add multi-threading support]]></Caption>
+      </Node>
+      <Node Id="fa35cd6a-9604-46d1-bad6-9da567975406">
+        <Caption><![CDATA[Redesign of parser pipeline]]></Caption>
+      </Node>
+      <Node Id="b2660709-d2fd-452a-bda5-1163c53da86f">
+        <Caption><![CDATA[cleanup of site configuration]]></Caption>
+      </Node>
+      <Node Id="341c3789-e504-4500-8307-2abf043a6cc6">
+        <Caption><![CDATA[Auto-link non wiki-word pages]]></Caption>
+      </Node>
+      <Node Id="687d70ce-ae7e-4c3c-a15b-ef0898902efb">
+        <Caption><![CDATA[Separate AST and AstBuilder]]></Caption>
+      </Node>
+      <Node Id="2698f693-d4f3-419a-a5d1-1f61d98c0cb4">
+        <Caption><![CDATA[Writing wiki pages from AST]]></Caption>
+      </Node>
+      <Node Id="595cd901-21bb-4423-b61a-ecb1b1c77333">
+        <Caption><![CDATA[Search PDF attachments]]></Caption>
+      </Node>
+    </Node>
+  </Node>
+</Tree>

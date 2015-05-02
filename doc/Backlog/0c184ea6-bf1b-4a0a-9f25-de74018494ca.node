@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Node Id="0c184ea6-bf1b-4a0a-9f25-de74018494ca" Created="635431377541055398" LastModified="635431378114069722">
+  <Caption><![CDATA[loading saved layout is slow]]></Caption>
+  <Content><![CDATA[- what does take the time? 
+  - deserializing layout?
+  - loading the files?
+- what can be done async?]]></Content>
+</Node>

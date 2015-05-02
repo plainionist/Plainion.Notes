@@ -1,0 +1,103 @@
+﻿<Window x:Class="Plainion.Notebook.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:pn="http://github.com/ronin4net/plainion"
+        xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
+        xmlns:n="clr-namespace:Plainion.Notebook"
+        xmlns:nv="clr-namespace:Plainion.Notebook.Views"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        Icon="Images/Notebook.png"
+        Title="{Binding TitleViewModel.Title}" Height="800" Width="1200">
+    <Window.Resources>
+        <ResourceDictionary>
+            <n:ActivePageConverter x:Key="ActivePageConverter"/>
+            <xcad:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+            <xcad:AeroTheme x:Key="DefaultTheme" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Views/PageView.xaml"/>
+                <ResourceDictionary Source="Views/BrowserToolsView.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Plainion.AppFw.Wpf;component/Views/ProjectLifecycleStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Style>
+        <pn:MultiStyle ResourceKeys="ProjectLifecycleStyle"/>
+    </Window.Style>
+    <Window.InputBindings>
+        <KeyBinding Key="O" Modifiers="Control" Command="{Binding ProjectLifecycleViewModel.OpenCommand}"/>
+        <KeyBinding Key="S" Modifiers="Control" Command="{Binding ProjectLifecycleViewModel.SaveCommand}"/>
+        <KeyBinding Key="F4" Modifiers="Alt" Command="{Binding ProjectLifecycleViewModel.CloseCommand}"/>
+        <KeyBinding Key="F4" Modifiers="Control" Command="{Binding ActivePage.CloseCommand}"/>
+    </Window.InputBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" Command="{Binding ProjectLifecycleViewModel.NewCommand}" />
+                <MenuItem Header="_Open" Command="{Binding ProjectLifecycleViewModel.OpenCommand}" InputGestureText="Ctrl+O"/>
+                <MenuItem Header="_Save" Command="{Binding ProjectLifecycleViewModel.SaveCommand}" InputGestureText="Ctrl+S"/>
+                <Separator/>
+                <MenuItem Header="_Close" Command="{Binding ProjectLifecycleViewModel.CloseCommand}" InputGestureText="Alt+F4"/>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="_Navigation" IsChecked="{Binding Navigation.IsVisible, Mode=TwoWay}" IsCheckable="True" IsEnabled="{Binding IsProjectLoaded}"/>
+                <MenuItem Header="_Search Results" IsChecked="{Binding SearchResults.IsVisible, Mode=TwoWay}" IsCheckable="True" IsEnabled="{Binding IsProjectLoaded}"/>
+            </MenuItem>
+        </Menu>
+        <xcad:DockingManager x:Name="myDockingManager" 
+                             AnchorablesSource="{Binding Tools}" 
+                             DocumentsSource="{Binding Pages}"
+                             ActiveContent="{Binding ActivePage, Mode=TwoWay, Converter={StaticResource ActivePageConverter}}"
+                             Theme="{StaticResource DefaultTheme}"
+                             Grid.Row="1">
+            <xcad:DockingManager.LayoutUpdateStrategy>
+                <n:LayoutInitializer/>
+            </xcad:DockingManager.LayoutUpdateStrategy>
+            <xcad:DockingManager.Resources>
+                <Style TargetType="{x:Type xcad:LayoutDocumentTabItem}">
+                    <Setter Property="MinWidth" Value="50" />
+                    <Setter Property="MaxWidth" Value="200" />
+                </Style>
+            </xcad:DockingManager.Resources>
+            <xcad:DockingManager.LayoutItemTemplateSelector>
+                <nv:PanesTemplateSelector PageViewTemplate="{StaticResource PageView}" 
+                                          NavigationViewTemplate="{StaticResource BrowserToolsView}"
+                                          SearchResultsViewTemplate="{StaticResource BrowserToolsView}"/>
+            </xcad:DockingManager.LayoutItemTemplateSelector>
+
+            <xcad:DockingManager.LayoutItemContainerStyleSelector>
+                <nv:PanesStyleSelector>
+                    <nv:PanesStyleSelector.ToolStyle>
+                        <Style TargetType="{x:Type xcad:LayoutAnchorableItem}">
+                            <Setter Property="Title" Value="{Binding Model.Title}"/>
+                            <Setter Property="Visibility" Value="{Binding Model.IsVisible, Mode=TwoWay, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter={x:Static Visibility.Hidden}}"/>
+                            <Setter Property="ContentId" Value="{Binding Model.ContentId}"/>
+                            <Setter Property="IsSelected" Value="{Binding Model.IsSelected, Mode=TwoWay}"/>
+                            <Setter Property="IsActive" Value="{Binding Model.IsActive, Mode=TwoWay}"/>
+                        </Style>
+                    </nv:PanesStyleSelector.ToolStyle>
+                    <nv:PanesStyleSelector.PageStyle>
+                        <Style TargetType="{x:Type xcad:LayoutItem}">
+                            <Setter Property="Title" Value="{Binding Model.Title}"/>
+                            <!--                            
+                            <Setter Property="ToolTip" Value="{Binding Model.FilePath}"/>
+                            -->
+                            <Setter Property="CloseCommand" Value="{Binding Model.CloseCommand}"/>
+                            <Setter Property="ContentId" Value="{Binding Model.ContentId}"/>
+                        </Style>
+                    </nv:PanesStyleSelector.PageStyle>
+                </nv:PanesStyleSelector>
+            </xcad:DockingManager.LayoutItemContainerStyleSelector>
+
+            <xcad:LayoutRoot>
+                <xcad:LayoutPanel Orientation="Horizontal">
+                    <xcad:LayoutAnchorablePane Name="ToolsPane" DockWidth="200" />
+                    <xcad:LayoutDocumentPane/>
+                </xcad:LayoutPanel>
+            </xcad:LayoutRoot>
+        </xcad:DockingManager>
+    </Grid>
+</Window>

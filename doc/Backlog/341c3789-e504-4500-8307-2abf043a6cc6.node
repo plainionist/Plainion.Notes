@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Node Id="341c3789-e504-4500-8307-2abf043a6cc6" Created="635430870275354382" LastModified="635430870421242726">
+  <Caption><![CDATA[Auto-link non wiki-word pages]]></Caption>
+  <Content><![CDATA[* everything should be linked
+* Find a way to automatically link existing pages which do not have a wiki-word page name.
+
+
+]]></Content>
+</Node>

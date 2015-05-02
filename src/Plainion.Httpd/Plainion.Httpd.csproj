@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\build\Globals.msbuild" />
+  <PropertyGroup>
+    <ProjectGuid>{0675C25D-C409-4918-BF37-BDB386FC96F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Plainion.Httpd</RootNamespace>
+    <AssemblyName>Plainion.Httpd</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DocumentationFile>$(OutputPath)\Plainion.Httpd.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DocumentationFile>$(OutputPath)\Plainion.Httpd.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdvancedHttpHandler.cs" />
+    <Compile Include="GenericErrorHandler.cs" />
+    <Compile Include="GenericHttpHandler.cs" />
+    <Compile Include="HttpDaemon.cs" />
+    <Compile Include="HttpListenerRequestExtensions.cs" />
+    <Compile Include="HttpRequestEventArgs.cs" />
+    <Compile Include="HttpResponse.cs" />
+    <Compile Include="HttpUtils.cs" />
+    <Compile Include="Views\AbstractHttpView.cs" />
+    <Compile Include="Views\FallbackView.cs" />
+    <Compile Include="Views\StaticFileView.cs" />
+    <Compile Include="MimeTypes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

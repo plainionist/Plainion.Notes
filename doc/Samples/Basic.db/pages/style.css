@@ -1,0 +1,79 @@
+
+html {
+    /* ensures that we can doubleclick even below the actual text */ 
+    height: 95%;
+}
+
+body { 
+    margin: 0px; 
+    padding: 0px; 
+    height: 100%;
+}
+
+body.tool { 
+    margin: 0px; 
+    padding: 0px; 
+    height: 100%;
+    background-color: aliceblue;
+}
+
+#header {
+    padding-top: 0px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+#footer {
+    padding-top:0.25em;
+    padding-bottom:0.25em;
+}
+ 
+#content {
+	padding: 0.5em;
+	height:100%;
+}
+
+#sitesearch {
+    width: 100%;
+}
+
+h1.wiki {
+    font-size: 17pt;
+}
+
+h2.wiki {
+    font-size: 15pt;
+}
+
+h3.wiki {
+    font-size: 13pt;
+}
+
+h4.wiki {
+    font-size: 12pt;
+}
+
+h5.wiki {
+    font-size: 11pt;
+}
+
+pre.wiki {
+    font-family: courier, Arial, Lucida Sans, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+#edit-header {
+    display: none;
+}
+
+#edit-form {
+    height:100%;
+}
+
+#edit-pagetext {
+    width: 100%;
+    height:90%;
+    text-wrap: normal;
+}
+

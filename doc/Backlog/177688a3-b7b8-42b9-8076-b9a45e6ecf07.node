@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Node Id="177688a3-b7b8-42b9-8076-b9a45e6ecf07" Created="635446539191227775" LastModified="635448972846349658" Origin="40151bca-0b3b-45ed-a0ba-ec6e6a101d54">
+  <Caption><![CDATA[page layout template]]></Caption>
+  <Content><![CDATA[should we really have an own PageRenderAction or better go for templates?]]></Content>
+</Node>
