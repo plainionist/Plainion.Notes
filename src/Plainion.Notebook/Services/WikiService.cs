@@ -162,16 +162,11 @@ namespace Plainion.Notebook.Services
 
         private void DeployResource( string resource, IDirectory dest )
         {
-            CopyEmbeddedTextResource( GetType().Assembly, "Plainion.Notebook.Resources." + resource, dest.File( resource ) );
-        }
+            var folder = Path.Combine( Path.GetDirectoryName( GetType().Assembly.Location ), "Resources", "Templates" );
 
-        private void CopyEmbeddedTextResource( Assembly self, string resource, IFile output )
-        {
-            using( var writer = output.CreateWriter() )
+            using( var writer = dest.File( resource ).CreateWriter() )
             {
-                var stream = self.GetManifestResourceStream( resource );
-                Contract.Invariant( stream != null, "Could not get resource: " + resource );
-                using( var reader = new StreamReader( stream ) )
+                using( var reader = new StreamReader( Path.Combine( folder, resource ) ) )
                 {
                     while( !reader.EndOfStream )
                     {

@@ -5,13 +5,11 @@ using Plainion.Wiki.Http.Views;
 
 namespace Plainion.Wiki.Http
 {
-    /// <summary/>
     public class BasicHttpController : AdvancedHttpHandler, IViewContext
     {
         private string myDocumentRoot;
         private IEngine myEngine;
 
-        /// <summary/>
         public BasicHttpController( IEngine engine, string documentRoot )
         {
             myDocumentRoot = documentRoot;
@@ -23,7 +21,6 @@ namespace Plainion.Wiki.Http
             BuildViewChain();
         }
 
-        /// <summary/>
         public string Toolbar
         {
             get;
@@ -56,7 +53,6 @@ namespace Plainion.Wiki.Http
             }
         }
 
-        /// <summary/>
         IEngine IViewContext.Engine
         {
             get { return myEngine; }
