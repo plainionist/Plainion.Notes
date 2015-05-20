@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using Plainion.Wiki.AST;
@@ -13,6 +14,14 @@ namespace Plainion.Notebook.Rendering.Html
     [HtmlRenderAction( typeof( Page ) )]
     public class PageRenderAction : GenericRenderAction<Page, IHtmlRenderActionContext>
     {
+        private string myClientScriptsRoot;
+
+        [ImportingConstructor]
+        public PageRenderAction( [Import( CompositionContracts.ClientScriptsRootUrl )]string clientScriptsRoot )
+        {
+            myClientScriptsRoot = clientScriptsRoot;
+        }
+
         protected override void Render( Page page )
         {
             WriteLine( " <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>" );
@@ -25,6 +34,14 @@ namespace Plainion.Notebook.Rendering.Html
             WriteLine( "       </title>" );
 
             WriteLine( "      <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>" );
+
+            Write( "      <link rel='stylesheet' type='text/css' media='screen' href='" );
+            Write( myClientScriptsRoot );
+            Write( "/awesomplete.css' />" );
+
+            Write( "      <script type='text/javascript' src='" );
+            Write( myClientScriptsRoot );
+            Write( "/awesomplete.js' async></script>" );
 
             if( Context.Stylesheet.ExternalStylesheet != null )
             {

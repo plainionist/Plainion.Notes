@@ -14,30 +14,24 @@ namespace Plainion.Wiki.Http
         [ImportingConstructor]
         public WikiServer( IServerSite site, IEngine engine )
         {
-            if ( site == null )
-            {
-                throw new ArgumentNullException( "site" );
-            }
+            Contract.RequiresNotNull( site, "site" );
+
             mySite = site;
 
             myLock = new object();
-            Controller = new BasicHttpController( engine, mySite.DocumentRoot );
+
+            Controller = new BasicHttpController( engine );
+            Controller.DocumentRoot = mySite.DocumentRoot;
+            Controller.ClientScriptsRoot = mySite.ClientScriptsRoot;
+            Controller.Initialize();
 
             DocumentRootUrl = "http://localhost:" + mySite.Port;
             myWebServer = new HttpDaemon( new Uri( DocumentRootUrl ) );
         }
 
-        public string DocumentRootUrl
-        {
-            get;
-            private set;
-        }
+        public string DocumentRootUrl { get; private set; }
 
-        public BasicHttpController Controller
-        {
-            get;
-            private set;
-        }
+        public BasicHttpController Controller { get; private set; }
 
         public void Start()
         {
@@ -47,7 +41,7 @@ namespace Plainion.Wiki.Http
 
         private void OnIncomingRequest( object sender, HttpRequestEventArgs e )
         {
-            lock ( myLock )
+            lock( myLock )
             {
                 Console.WriteLine( "Request: " + e.RequestContext.Request.Url.PathAndQuery );
 

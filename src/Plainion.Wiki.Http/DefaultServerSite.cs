@@ -14,20 +14,14 @@ namespace Plainion.Wiki.Http
             Port = port;
         }
 
-        public string DocumentRoot
-        {
-            get;
-            private set;
-        }
+        public string DocumentRoot { get; private set; }
+
+        public string ClientScriptsRoot { get; set; }
 
         /// <summary>
         /// Server port.
         /// Default: 8080
         /// </summary>
-        public int Port
-        {
-            get;
-            set;
-        }
+        public int Port { get; set; }
     }
 }

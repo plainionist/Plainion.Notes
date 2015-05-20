@@ -92,7 +92,10 @@ namespace Plainion.Notebook.Services
             myComposer.RegisterPageAttributeTransformers( typeof( Engine ).Assembly );
 
             var serverSite = new DefaultServerSite( project.PagesRoot, GetRandomUnusedPort() );
+            serverSite.ClientScriptsRoot = Path.GetDirectoryName( GetType().Assembly.Location );
             myComposer.RegisterInstance<IServerSite>( serverSite );
+
+            myComposer.RegisterInstance<string>( CompositionContracts.ClientScriptsRootUrl, "/Resources/AC6F3CF8-4565-4C15-82D1-2230358438EB" );
 
             myComposer.Compose();
 

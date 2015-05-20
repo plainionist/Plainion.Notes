@@ -7,50 +7,57 @@ namespace Plainion.Wiki.Http
 {
     public class BasicHttpController : AdvancedHttpHandler, IViewContext
     {
-        private string myDocumentRoot;
         private IEngine myEngine;
 
-        public BasicHttpController( IEngine engine, string documentRoot )
+        public BasicHttpController( IEngine engine )
         {
-            myDocumentRoot = documentRoot;
             myEngine = engine;
 
             ErrorHandler = new ErrorHandler( myEngine );
-            Toolbar = GetToolbar();
-
-            BuildViewChain();
         }
 
-        public string Toolbar
+        public string DocumentRoot { get; set; }
+
+        public string ClientScriptsRoot { get; set; }
+
+        public void Initialize()
         {
-            get;
-            private set;
+            Contract.RequiresNotNull( ViewChain.Count == 0, "Already initialized" );
+
+            var toolbar = GetToolbarContent();
+
+            ViewChain.Push( new SearchResultPageView( this ) );
+            ViewChain.Push( new ShowPageView( this ) );
+            ViewChain.Push( new NewPageView( this, toolbar ) );
+            ViewChain.Push( new CreatePageView( this ) );
+            ViewChain.Push( new EditPageView( this, toolbar ) );
+            ViewChain.Push( new UpdatePageView( this ) );
+
+            if( DocumentRoot != null )
+            {
+                ViewChain.Push( new StaticFileView( DocumentRoot ) );
+            }
+
+            if( ClientScriptsRoot != null )
+            {
+                ViewChain.Push( new StaticFileView( ClientScriptsRoot ) );
+            }
         }
 
-        private string GetToolbar()
+        private string GetToolbarContent()
         {
-            var toolbarFile = Path.Combine( myDocumentRoot, "toolbar.html" );
-            if ( File.Exists( toolbarFile ) )
+            if( DocumentRoot == null )
+            {
+                return string.Empty;
+            }
+
+            var toolbarFile = Path.Combine( DocumentRoot, "toolbar.html" );
+            if( File.Exists( toolbarFile ) )
             {
                 return File.ReadAllText( toolbarFile );
             }
 
             return string.Empty;
-        }
-        
-        private void BuildViewChain()
-        {
-            ViewChain.Push( new SearchResultPageView( this ) );
-            ViewChain.Push( new ShowPageView( this ) );
-            ViewChain.Push( new NewPageView( this, Toolbar ) );
-            ViewChain.Push( new CreatePageView( this ) );
-            ViewChain.Push( new EditPageView( this, Toolbar ) );
-            ViewChain.Push( new UpdatePageView( this ) );
-
-            if ( myDocumentRoot != null )
-            {
-                ViewChain.Push( new StaticFileView( myDocumentRoot ) );
-            }
         }
 
         IEngine IViewContext.Engine

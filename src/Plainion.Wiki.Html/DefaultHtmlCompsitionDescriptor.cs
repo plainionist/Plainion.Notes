@@ -11,7 +11,7 @@ namespace Plainion.Wiki.Html
         [ImportingConstructor]
         public DefaultHtmlCompsitionDescriptor( [Import( CompositionContractNames.FileSystemRoot )]IDirectory fileSystemRoot )
         {
-            Func<string, string> ExistingFileNameOrNull = file => fileSystemRoot.File( file ).Exists ? fileSystemRoot.File( file ).Path : null;
+            Func<string, string> ExistingFileNameOrNull = file => fileSystemRoot.File( file ).Exists ? fileSystemRoot.File( file ).Name : null;
 
             HtmlStylesheet = new HtmlStylesheet();
             HtmlStylesheet.ExternalStylesheet = ExistingFileNameOrNull( ResourceNames.CssStylesheet );

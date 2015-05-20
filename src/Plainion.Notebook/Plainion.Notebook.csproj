@@ -125,6 +125,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="CompositionContracts.cs" />
     <Compile Include="Events\PageClosedEvent.cs" />
     <Compile Include="LayoutInitializer.cs" />
     <Compile Include="Model\Project.cs" />
@@ -184,6 +185,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="Resources\AC6F3CF8-4565-4C15-82D1-2230358438EB\awesomplete.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AC6F3CF8-4565-4C15-82D1-2230358438EB\awesomplete.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Templates\HomePage.bwi">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
