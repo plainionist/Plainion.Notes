@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>jQuery Hello World</title>
+
+    <link rel="stylesheet" href="jquery.textcomplete-0.4.0.css" />
+
+    <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+    <!-- https://github.com/yuku-t/jquery-textcomplete -->
+    <script type="text/javascript" src="jquery-textcomplete-0.4.0.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            //var elements = ['page1', 'page2'];
+            var elements = $('#data1 option').map(function () {
+                return this.value;
+            }).get();
+
+            $('#textarea2').textcomplete([
+                { 
+                    match: /\[(\w*)$/,
+                    search: function (term, callback) {
+                        callback($.map(elements, function (element) {
+                            return element.indexOf(term) === 0 ? element : null;
+                        }));
+                    },
+                    index: 1,
+                    replace: function (element) {
+                        return ['[' + element + ']', ''];
+                    }
+                }
+            ]);
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="textarea-wrapper">
+        <textarea id="textarea2" rows="4"> </textarea>
+        <datalist id="data1">
+            <option>page 1</option>
+            <option>page 2</option>
+        </datalist>
+    </div>
+
+</body>
+</html>

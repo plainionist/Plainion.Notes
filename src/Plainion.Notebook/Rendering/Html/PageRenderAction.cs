@@ -37,11 +37,15 @@ namespace Plainion.Notebook.Rendering.Html
 
             Write( "      <link rel='stylesheet' type='text/css' media='screen' href='" );
             Write( myClientScriptsRoot );
-            Write( "/awesomplete.css' />" );
+            Write( "/jquery.textcomplete-0.4.0.css' />" );
 
             Write( "      <script type='text/javascript' src='" );
             Write( myClientScriptsRoot );
-            Write( "/awesomplete.js' async></script>" );
+            Write( "/jquery-1.11.3.min.js'></script>" );
+
+            Write( "      <script type='text/javascript' src='" );
+            Write( myClientScriptsRoot );
+            Write( "/jquery-textcomplete-0.4.0.min.js'></script>" );
 
             if( Context.Stylesheet.ExternalStylesheet != null )
             {
@@ -65,7 +69,7 @@ namespace Plainion.Notebook.Rendering.Html
             WriteLine( "      </style>" );
             WriteLine( "   </head>" );
 
-            var cssClass = IsTool( page ) ? "tool" : "page";
+            var cssClass = IsTool( page.Name ) ? "tool" : "page";
 
             if( page.Content.Type == PageBodyType.Content )
             {
@@ -78,7 +82,26 @@ namespace Plainion.Notebook.Rendering.Html
             }
             else
             {
+                Write( "      <script type='text/javascript' src='" );
+                Write( myClientScriptsRoot );
+                Write( "/main.js'></script>" );
+
                 WriteLine( "   <body class='" + cssClass + "'>" );
+
+                WriteLine( "<datalist id='pages'>" );
+                var contentPages = Context.RenderingContext.EngineContext.Query.All()
+                    .Where( n => n != page.Name )
+                    .Where( n => page.Header == null || page.Header.Name != n )
+                    .Where( n => page.Footer == null || page.Footer.Name != n )
+                    .Where( n => page.SideBar == null || page.SideBar.Name != n )
+                    .Where( n => !IsTool( n ) );
+                foreach( var name in contentPages )
+                {
+                    Write( "<option>" );
+                    Write( name.Name );
+                    Write( "</option>" );
+                }
+                WriteLine( "</datalist>" );
             }
 
             WriteLine( "       <div id='header'>" );
@@ -116,10 +139,10 @@ namespace Plainion.Notebook.Rendering.Html
             WriteLine( "   </html>" );
         }
 
-        private static bool IsTool( Page page )
+        private static bool IsTool( PageName pageName )
         {
-            return page.Name.Name == "Page.Navigation"
-                || page.Name.Name == PageNames.SiteSearchResults;
+            return pageName.Name == "Page.Navigation"
+                || pageName.Name == PageNames.SiteSearchResults;
         }
 
         // if real content has surrounding paragraph if will be omitted

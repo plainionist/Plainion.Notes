@@ -185,10 +185,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <Content Include="Resources\AC6F3CF8-4565-4C15-82D1-2230358438EB\awesomplete.css">
+    <Content Include="Resources\AC6F3CF8-4565-4C15-82D1-2230358438EB\jquery-1.11.3.min.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\AC6F3CF8-4565-4C15-82D1-2230358438EB\awesomplete.js">
+    <Content Include="Resources\AC6F3CF8-4565-4C15-82D1-2230358438EB\jquery-textcomplete-0.4.0.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AC6F3CF8-4565-4C15-82D1-2230358438EB\jquery.textcomplete-0.4.0.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AC6F3CF8-4565-4C15-82D1-2230358438EB\main.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Templates\HomePage.bwi">
