@@ -35,102 +35,105 @@ namespace Plainion.Notebook.Services
         private Uri myHomePageUri;
 
         [ImportingConstructor]
-        public WikiService( IEventAggregator eventAggregator )
+        public WikiService(IEventAggregator eventAggregator)
         {
-            eventAggregator.GetEvent<ApplicationShutdownEvent>().Subscribe( x => OnShutdown() );
+            eventAggregator.GetEvent<ApplicationShutdownEvent>().Subscribe(x => OnShutdown());
         }
 
         private void OnShutdown()
         {
-            if( myDaemon != null )
+            if (myDaemon != null)
             {
                 myDaemon.Stop();
             }
         }
 
-        public void StartDaemon( Project project )
+        public void StartDaemon(Project project)
         {
-            if( !Directory.Exists( project.PagesRoot ) )
+            if (!Directory.Exists(project.PagesRoot))
             {
-                Directory.CreateDirectory( project.PagesRoot );
+                Directory.CreateDirectory(project.PagesRoot);
             }
 
             myComposer = new Composer();
 
             var fs = new FileSystemImpl();
-            myComposer.RegisterInstance<IFileSystem>( fs );
-            myComposer.RegisterInstance( CompositionContractNames.FileSystemRoot, fs.Directory( project.PagesRoot ) );
+            myComposer.RegisterInstance<IFileSystem>(fs);
+            myComposer.RegisterInstance(CompositionContractNames.FileSystemRoot, fs.Directory(project.PagesRoot));
 
             myComposer.Register(
-                typeof( DefaultFlatFileCompositionDescriptor ),
-                typeof( DefaultHtmlCompsitionDescriptor ),
-                typeof( DefaultHttpCompositionDescriptor ),
-                typeof( FlatFilePageHistoryAccess ),
-                typeof( HtmlRenderer ),
-                typeof( HtmlRenderActionCatalog ),
-                typeof( RenderingPipeline ),
-                typeof( RenderingStepCatalog ),
-                typeof( PageAttributeTransformerCatalog ),
-                typeof( QueryCompiler ),
-                typeof( DefaultAuditingLog ),
-                typeof( Engine ),
-                typeof( PageRepository ),
-                typeof( ParserPipeline ),
-                typeof( DefaultErrorPageHandler )
+                typeof(DefaultFlatFileCompositionDescriptor),
+                typeof(DefaultHtmlCompsitionDescriptor),
+                typeof(DefaultHttpCompositionDescriptor),
+                typeof(FlatFilePageHistoryAccess),
+                typeof(HtmlRenderer),
+                typeof(HtmlRenderActionCatalog),
+                typeof(RenderingPipeline),
+                typeof(RenderingStepCatalog),
+                typeof(PageAttributeTransformerCatalog),
+                typeof(QueryCompiler),
+                typeof(DefaultAuditingLog),
+                typeof(Engine),
+                typeof(PageRepository),
+                typeof(ParserPipeline),
+                typeof(DefaultErrorPageHandler),
+                typeof(WikiMetadata)
             );
 
-            myComposer.Register( typeof( WikiServer ) );
+            myComposer.Register(typeof(WikiServer));
 
-            var decoratorCatalog = new DecoratorChainCatalog( typeof( IPageAccess ) );
-            decoratorCatalog.Add( typeof( FlatFilePageAccess ) );
-            decoratorCatalog.Add( typeof( AuditingPageAccessDecorator ) );
-            myComposer.Add( decoratorCatalog );
+            var decoratorCatalog = new DecoratorChainCatalog(typeof(IPageAccess));
+            decoratorCatalog.Add(typeof(FlatFilePageAccess));
+            decoratorCatalog.Add(typeof(AuditingPageAccessDecorator));
+            myComposer.Add(decoratorCatalog);
 
-            myComposer.RegisterRenderActions( typeof( HtmlRenderer ).Assembly );
-            myComposer.RegisterRenderActions( GetType().Assembly );
-            myComposer.RegisterRenderingSteps( typeof( Engine ).Assembly );
-            myComposer.RegisterPageAttributeTransformers( typeof( Engine ).Assembly );
+            myComposer.RegisterRenderActions(typeof(HtmlRenderer).Assembly);
+            myComposer.RegisterRenderActions(GetType().Assembly);
+            myComposer.RegisterRenderingSteps(typeof(Engine).Assembly);
+            myComposer.RegisterPageAttributeTransformers(typeof(Engine).Assembly);
 
-            var serverSite = new DefaultServerSite( project.PagesRoot, GetRandomUnusedPort() );
-            serverSite.ClientScriptsRoot = Path.GetDirectoryName( GetType().Assembly.Location );
-            myComposer.RegisterInstance<IServerSite>( serverSite );
+            var serverSite = new DefaultServerSite(project.PagesRoot, GetRandomUnusedPort());
+            serverSite.ClientScriptsRoot = Path.GetDirectoryName(GetType().Assembly.Location);
+            myComposer.RegisterInstance<IServerSite>(serverSite);
 
-            myComposer.RegisterInstance<string>( CompositionContracts.ClientScriptsRootUrl, "/Resources/AC6F3CF8-4565-4C15-82D1-2230358438EB" );
+            myComposer.RegisterInstance<string>(CompositionContracts.ClientScriptsRootUrl, "/Resources/AC6F3CF8-4565-4C15-82D1-2230358438EB");
 
             myComposer.Compose();
 
-            var siteConfig = myComposer.Resolve<SiteConfig>( CompositionContractNames.SiteConfig );
+            var siteConfig = myComposer.Resolve<SiteConfig>(CompositionContractNames.SiteConfig);
             siteConfig.RenderPageNameAsHeadline = false;
 
             myDaemon = myComposer.Resolve<WikiServer>();
             myDaemon.Start();
 
-            myHomePageUri = new Uri( myDaemon.DocumentRootUrl );
+            myDaemon.Controller.ViewChain.Push(new ExportView(myDaemon.Controller, myComposer.Resolve<WikiMetadata>()));
 
-            Debug.WriteLine( string.Format( "Plainion.Wiki server listening to {0}", myDaemon.DocumentRootUrl ) );
+            myHomePageUri = new Uri(myDaemon.DocumentRootUrl);
 
-            if( !WebCore.IsInitialized )
+            Debug.WriteLine(string.Format("Plainion.Wiki server listening to {0}", myDaemon.DocumentRootUrl));
+
+            if (!WebCore.IsInitialized)
             {
-                WebCore.Initialize( new WebConfig()
+                WebCore.Initialize(new WebConfig()
                 {
                     LogPath = null,
                     LogLevel = LogLevel.None
-                } );
+                });
             }
         }
 
         public static int GetRandomUnusedPort()
         {
-            var listener = new TcpListener( IPAddress.Loopback, 0 );
+            var listener = new TcpListener(IPAddress.Loopback, 0);
             listener.Start();
-            var port = ( ( IPEndPoint )listener.LocalEndpoint ).Port;
+            var port = ((IPEndPoint)listener.LocalEndpoint).Port;
             listener.Stop();
             return port;
         }
 
         public void StopDaemon()
         {
-            Contract.Invariant( myDaemon != null, "Daemon not started" );
+            Contract.Invariant(myDaemon != null, "Daemon not started");
 
             myDaemon.Stop();
             myComposer.Dispose();
@@ -145,35 +148,35 @@ namespace Plainion.Notebook.Services
             }
         }
 
-        internal void CreateNewProject( Project project )
+        internal void CreateNewProject(Project project)
         {
-            if( Directory.Exists( project.PagesRoot ) )
+            if (Directory.Exists(project.PagesRoot))
             {
-                Directory.Delete( project.PagesRoot, true );
+                Directory.Delete(project.PagesRoot, true);
             }
 
-            Directory.CreateDirectory( project.PagesRoot );
+            Directory.CreateDirectory(project.PagesRoot);
 
             var fs = new FileSystemImpl();
-            var dest = fs.Directory( project.PagesRoot );
+            var dest = fs.Directory(project.PagesRoot);
 
-            DeployResource( "HomePage.bwi", dest );
-            DeployResource( "Page.Header.bwi", dest );
-            DeployResource( "Page.Navigation.bwi", dest );
-            DeployResource( "style.css", dest );
+            DeployResource("HomePage.bwi", dest);
+            DeployResource("Page.Header.bwi", dest);
+            DeployResource("Page.Navigation.bwi", dest);
+            DeployResource("style.css", dest);
         }
 
-        private void DeployResource( string resource, IDirectory dest )
+        private void DeployResource(string resource, IDirectory dest)
         {
-            var folder = Path.Combine( Path.GetDirectoryName( GetType().Assembly.Location ), "Resources", "Templates" );
+            var folder = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), "Resources", "Templates");
 
-            using( var writer = dest.File( resource ).CreateWriter() )
+            using (var writer = dest.File(resource).CreateWriter())
             {
-                using( var reader = new StreamReader( Path.Combine( folder, resource ) ) )
+                using (var reader = new StreamReader(Path.Combine(folder, resource)))
                 {
-                    while( !reader.EndOfStream )
+                    while (!reader.EndOfStream)
                     {
-                        writer.WriteLine( reader.ReadLine() );
+                        writer.WriteLine(reader.ReadLine());
                     }
                 }
             }
@@ -183,54 +186,54 @@ namespace Plainion.Notebook.Services
         {
             get
             {
-                Contract.Requires( myDaemon != null, "Daemon not running" );
+                Contract.Requires(myDaemon != null, "Daemon not running");
 
                 return myHomePageUri;
             }
         }
 
-        internal Uri GetUriFromPath( string uriPath )
+        internal Uri GetUriFromPath(string uriPath)
         {
-            Contract.RequiresNotNullNotEmpty( uriPath, "uriPath" );
-            Contract.Requires( myDaemon != null, "Daemon not running" );
+            Contract.RequiresNotNullNotEmpty(uriPath, "uriPath");
+            Contract.Requires(myDaemon != null, "Daemon not running");
 
-            if( Link.IsExternalLink( uriPath ) )
+            if (Link.IsExternalLink(uriPath))
             {
-                return new Uri( uriPath );
+                return new Uri(uriPath);
             }
 
-            var builder = new UriBuilder( myDaemon.DocumentRootUrl );
+            var builder = new UriBuilder(myDaemon.DocumentRootUrl);
             builder.Path = uriPath;
             return builder.Uri;
         }
 
-        internal string GetPageNameFromUri( Uri uri )
+        internal string GetPageNameFromUri(Uri uri)
         {
-            Contract.RequiresNotNull( uri, "uri" );
-            Contract.Requires( myDaemon != null, "Daemon not running" );
+            Contract.RequiresNotNull(uri, "uri");
+            Contract.Requires(myDaemon != null, "Daemon not running");
 
-            if( !uri.ToString().StartsWith( myDaemon.DocumentRootUrl, StringComparison.OrdinalIgnoreCase ) )
+            if (!uri.ToString().StartsWith(myDaemon.DocumentRootUrl, StringComparison.OrdinalIgnoreCase))
             {
                 // external link
                 return uri.ToString();
             }
 
-            if( uri.Equals( myHomePageUri ) )
+            if (uri.Equals(myHomePageUri))
             {
-                return myComposer.Resolve<SiteConfig>( CompositionContractNames.SiteConfig ).HomePageName;
+                return myComposer.Resolve<SiteConfig>(CompositionContractNames.SiteConfig).HomePageName;
             }
 
             return uri.AbsolutePath;
         }
 
-        internal bool IsExternalLink( Uri uri )
+        internal bool IsExternalLink(Uri uri)
         {
-            return !uri.ToString().StartsWith( myDaemon.DocumentRootUrl, StringComparison.OrdinalIgnoreCase );
+            return !uri.ToString().StartsWith(myDaemon.DocumentRootUrl, StringComparison.OrdinalIgnoreCase);
         }
 
         public void Dispose()
         {
-            if( WebCore.IsInitialized )
+            if (WebCore.IsInitialized)
             {
                 WebCore.Shutdown();
             }

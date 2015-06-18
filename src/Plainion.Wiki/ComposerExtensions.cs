@@ -7,22 +7,23 @@ namespace Plainion.Wiki
 {
     public static class ComposerExtensions
     {
-        public static void RegisterRenderingSteps( this IComposer self, Assembly assembly )
+        public static void RegisterRenderingSteps(this IComposer self, Assembly assembly)
         {
             var defaultRenderActions = assembly.GetTypes()
-                .Where( t => t.GetCustomAttributes( typeof( RenderingStepAttribute ), true ).Any() )
+                .Where(t => t.GetCustomAttributes(typeof(RenderingStepAttribute), true).Any())
                 .ToArray();
 
-            self.Register( defaultRenderActions );
+            self.Register(defaultRenderActions);
+            self.Register(typeof(PageLayoutDescriptor));
         }
 
-        public static void RegisterPageAttributeTransformers( this IComposer self, Assembly assembly )
+        public static void RegisterPageAttributeTransformers(this IComposer self, Assembly assembly)
         {
             var defaultRenderActions = assembly.GetTypes()
-                .Where( t => t.GetCustomAttributes( typeof( PageAttributeTransformerAttribute ), true ).Any() )
+                .Where(t => t.GetCustomAttributes(typeof(PageAttributeTransformerAttribute), true).Any())
                 .ToArray();
 
-            self.Register( defaultRenderActions );
+            self.Register(defaultRenderActions);
         }
     }
 }

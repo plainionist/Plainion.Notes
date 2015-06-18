@@ -10,7 +10,7 @@ namespace Plainion.Httpd
         public AdvancedHttpHandler()
         {
             ViewChain = new Stack<AbstractHttpView>();
-            ViewChain.Push( new FallbackView() );
+            ViewChain.Push(new FallbackView());
 
             ErrorHandler = new GenericErrorHandler();
         }
@@ -20,28 +20,24 @@ namespace Plainion.Httpd
         protected override HttpResponse HandleRequestInternal()
         {
             var view = DispatchRequest();
-            return RenderView( view );
+            return RenderView(view);
         }
 
         private AbstractHttpView DispatchRequest()
         {
-            return ViewChain.First( view => view.CanHandleRequest( Request ) );
+            return ViewChain.First(view => view.CanHandleRequest(Request));
         }
 
-        private HttpResponse RenderView( AbstractHttpView view )
+        private HttpResponse RenderView(AbstractHttpView view)
         {
-            return view.HandleRequest( Request );
+            return view.HandleRequest(Request);
         }
 
-        protected override HttpResponse HandleGeneralErrorInternal( Exception exception )
+        protected override HttpResponse HandleGeneralErrorInternal(Exception exception)
         {
-            return ErrorHandler.GenerateResponse( exception );
+            return ErrorHandler.GenerateResponse(exception);
         }
 
-        protected virtual GenericErrorHandler ErrorHandler
-        {
-            get;
-            set;
-        }
+        protected virtual GenericErrorHandler ErrorHandler { get; set; }
     }
 }

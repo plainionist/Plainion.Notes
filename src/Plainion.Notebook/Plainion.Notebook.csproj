@@ -130,10 +130,13 @@
     <Compile Include="LayoutInitializer.cs" />
     <Compile Include="Model\Project.cs" />
     <Compile Include="PageViewModelFactory.cs" />
-    <Compile Include="Rendering\Html\PageRenderAction.cs" />
-    <Compile Include="Rendering\Html\SiteSearchFormRenderAction.cs" />
+    <Compile Include="Services\Rendering\Html\PageRenderAction.cs" />
+    <Compile Include="Services\Rendering\Html\SiteSearchFormRenderAction.cs" />
+    <Compile Include="Services\EngineExtensions.cs" />
+    <Compile Include="Services\ExportView.cs" />
     <Compile Include="Services\ProjectService.cs" />
     <Compile Include="Services\Serializer.cs" />
+    <Compile Include="Services\WikiMetadata.cs" />
     <Compile Include="Services\WikiService.cs" />
     <Compile Include="ViewModels\IPageNavigation.cs" />
     <Compile Include="ViewModels\IViewConnector.cs" />
@@ -209,6 +212,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Plainion.Httpd\Plainion.Httpd.csproj">
+      <Project>{0675c25d-c409-4918-bf37-bdb386fc96f6}</Project>
+      <Name>Plainion.Httpd</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Plainion.Wiki.Html\Plainion.Wiki.Html.csproj">
       <Project>{e73f1159-68a8-4016-a32f-6b8da8a9e6a6}</Project>
       <Name>Plainion.Wiki.Html</Name>

@@ -85,6 +85,7 @@
     <Compile Include="Rendering\LinkReformattingStep.cs" />
     <Compile Include="Rendering\PageAttributeTransformers\PageBodyEditTransformer.cs" />
     <Compile Include="Rendering\PageAttributeTransformers\SiteMapTransformer.cs" />
+    <Compile Include="Rendering\PageLayoutDescriptor.cs" />
     <Compile Include="SiteConfig.cs" />
     <Compile Include="DataAccess\AliasPageDescriptor.cs" />
     <Compile Include="DataAccess\DistributedPageAccess.cs" />

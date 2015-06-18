@@ -2,7 +2,7 @@
 using Plainion.Wiki.Html.Rendering;
 using Plainion.Wiki.Rendering;
 
-namespace Plainion.Notebook.Rendering.Html
+namespace Plainion.Notebook.Services.Rendering.Html
 {
     [HtmlRenderAction( typeof( SiteSearchForm ) )]
     public class SiteSearchFormRenderAction : GenericRenderAction<SiteSearchForm>
