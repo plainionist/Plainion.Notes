@@ -15,7 +15,7 @@ namespace Plainion.Wiki.AST
         {
             Text = text;
             Size = fontSize;
-            Anchor = Text.RemoveAll( char.IsWhiteSpace );
+            Anchor = Text;
         }
         
         public string Text

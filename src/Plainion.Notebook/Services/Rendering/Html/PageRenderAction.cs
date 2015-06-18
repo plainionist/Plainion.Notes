@@ -68,7 +68,11 @@ namespace Plainion.Notebook.Services.Rendering.Html
 
             var cssClass = myWikiMetadata.IsTool(page.Name) ? "tool" : "page";
 
-            if (page.Content.Type == PageBodyType.Content)
+            if (page.Name == myWikiMetadata.PrintPreviewPageName)
+            {
+                WriteLine("   <body class='" + cssClass + "'>");
+            }
+            else if (page.Content.Type == PageBodyType.Content)
             {
                 WriteLine("   <script type='text/javascript' language='JavaScript'>");
                 WriteLine("       function edit() {");

@@ -5,9 +5,12 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using Awesomium.Core;
+using Microsoft.Practices.Prism.PubSubEvents;
+using Plainion.Composition;
 using Plainion.IO;
 using Plainion.IO.RealFS;
 using Plainion.Notebook.Model;
+using Plainion.Prism.Events;
 using Plainion.Wiki;
 using Plainion.Wiki.AST;
 using Plainion.Wiki.Auditing;
@@ -19,11 +22,6 @@ using Plainion.Wiki.Http;
 using Plainion.Wiki.Parser;
 using Plainion.Wiki.Query;
 using Plainion.Wiki.Rendering;
-using Microsoft.Practices.Prism.PubSubEvents;
-using Plainion;
-using Plainion.Composition;
-using System.Reflection;
-using Plainion.Prism.Events;
 
 namespace Plainion.Notebook.Services
 {
@@ -120,6 +118,11 @@ namespace Plainion.Notebook.Services
                     LogLevel = LogLevel.None
                 });
             }
+        }
+
+        public WikiMetadata GetMetadata()
+        {
+            return myComposer.Resolve<WikiMetadata>();
         }
 
         public static int GetRandomUnusedPort()

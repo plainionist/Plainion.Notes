@@ -14,6 +14,8 @@ namespace Plainion.Notebook.Services
         public WikiMetadata(PageLayoutDescriptor pageLayoutDescriptor)
         {
             myPageLayoutDescriptor = pageLayoutDescriptor;
+
+            PrintPreviewPageName = PageName.Create("Print preview");
         }
 
         public bool IsContent(PageName page)
@@ -29,5 +31,7 @@ namespace Plainion.Notebook.Services
             return page.Name == "Page.Navigation"
                 || page.Name == PageNames.SiteSearchResults;
         }
+
+        public PageName PrintPreviewPageName { get; private set; }
     }
 }

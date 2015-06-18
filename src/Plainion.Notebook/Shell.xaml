@@ -40,6 +40,8 @@
                 <MenuItem Header="_Open" Command="{Binding ProjectLifecycleViewModel.OpenCommand}" InputGestureText="Ctrl+O"/>
                 <MenuItem Header="_Save" Command="{Binding ProjectLifecycleViewModel.SaveCommand}" InputGestureText="Ctrl+S"/>
                 <Separator/>
+                <MenuItem Header="_Print" Command="{Binding PrintCommand}"/>
+                <Separator/>
                 <MenuItem Header="_Close" Command="{Binding ProjectLifecycleViewModel.CloseCommand}" InputGestureText="Alt+F4"/>
             </MenuItem>
             <MenuItem Header="_Tools">

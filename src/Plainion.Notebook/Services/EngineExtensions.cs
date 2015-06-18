@@ -7,9 +7,10 @@ namespace Plainion.Notebook.Services
 {
     static class EngineExtensions
     {
-        public static void RenderAllContentIntoOnePage(this IEngine self, WikiMetadata wikiMetadata, Stream output)
+        // TODO: no "edit" in this page ... but currently only possible by skipping the entire header
+        public static void RenderAllContentIntoOnePage(this IEngine self, WikiMetadata wikiMetadata, PageName targetPageName, Stream output)
         {
-            var root = new PageBody(PageName.Create("ALL"));
+            var root = new PageBody(targetPageName);
 
             var contentPages = self.Query.All()
                 .Where(n => wikiMetadata.IsContent(n));

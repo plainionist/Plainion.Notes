@@ -22,8 +22,10 @@ namespace Plainion.Notebook.Services
 
         public override HttpResponse HandleRequest(HttpListenerRequest request)
         {
+            var pageName = GetPageName(request);
+
             var response = new HttpResponse();
-            Context.Engine.RenderAllContentIntoOnePage(myWikiMetadata, response.OutputStream);
+            Context.Engine.RenderAllContentIntoOnePage(myWikiMetadata, pageName, response.OutputStream);
             response.OutputStream.Close();
 
             return response;

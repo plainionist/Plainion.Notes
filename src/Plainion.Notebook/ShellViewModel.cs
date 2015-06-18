@@ -15,11 +15,14 @@ using Plainion.Prism.Events;
 using Xceed.Wpf.AvalonDock;
 using Xceed.Wpf.AvalonDock.Layout;
 using Xceed.Wpf.AvalonDock.Layout.Serialization;
+using System.Windows.Input;
+using Microsoft.Practices.Prism.Commands;
+using System.Web;
 
 namespace Plainion.Notebook
 {
-    [Export( typeof( IPageNavigation ) )]
-    [Export( typeof( ShellViewModel ) )]
+    [Export(typeof(IPageNavigation))]
+    [Export(typeof(ShellViewModel))]
     class ShellViewModel : BindableBase, IPageNavigation
     {
         private const string AppName = "Plainion.Notebook";
@@ -40,12 +43,12 @@ namespace Plainion.Notebook
         [Import]
         private WikiService WikiService { get; set; }
 
-        [Import( AllowRecomposition = true )]
+        [Import(AllowRecomposition = true)]
         private Lazy<DockingManager> DockingManager { get; set; }
 
         [ImportingConstructor]
-        public ShellViewModel( IProjectService<Project> projectService, IEventAggregator eventAggregator, IPersistenceService<Project> persistenceService,
-            PageViewModelFactory pageViewModelFactory )
+        public ShellViewModel(IProjectService<Project> projectService, IEventAggregator eventAggregator, IPersistenceService<Project> persistenceService,
+            PageViewModelFactory pageViewModelFactory)
         {
             myProjectService = projectService;
             myPersistenceService = persistenceService;
@@ -56,16 +59,18 @@ namespace Plainion.Notebook
             myProjectService.ProjectChanged += OnProjectChanged;
 
             myPages = new ObservableCollection<PageViewModel>();
-            Pages = new ReadOnlyObservableCollection<PageViewModel>( myPages );
+            Pages = new ReadOnlyObservableCollection<PageViewModel>(myPages);
 
             myTools = new ObservableCollection<ToolViewModel>();
-            Tools = new ReadOnlyObservableCollection<ToolViewModel>( myTools );
+            Tools = new ReadOnlyObservableCollection<ToolViewModel>(myTools);
 
-            myTools.Add( DummyTool.Instance );
+            myTools.Add(DummyTool.Instance);
 
-            myEventAggregator.GetEvent<ApplicationReadyEvent>().Subscribe( x => OnApplicationReady() );
-            myEventAggregator.GetEvent<ApplicationShutdownEvent>().Subscribe( x => OnShutdown() );
-            myEventAggregator.GetEvent<PageClosedEvent>().Subscribe( OnPageClosed );
+            PrintCommand = new DelegateCommand(OnPrint, () => IsProjectLoaded);
+
+            myEventAggregator.GetEvent<ApplicationReadyEvent>().Subscribe(x => OnApplicationReady());
+            myEventAggregator.GetEvent<ApplicationShutdownEvent>().Subscribe(x => OnShutdown());
+            myEventAggregator.GetEvent<PageClosedEvent>().Subscribe(OnPageClosed);
         }
 
         [Import]
@@ -73,24 +78,33 @@ namespace Plainion.Notebook
 
         [Import]
         public TitleViewModel<Project> TitleViewModel { get; set; }
-        
-        private void OnPageClosed( PageViewModel pageViewModel )
+
+        public DelegateCommand PrintCommand { get; private set; }
+
+        private void OnPrint()
         {
-            if( ActivePage == pageViewModel )
+            var uri = WikiService.GetUriFromPath(HttpUtility.UrlEncode(WikiService.GetMetadata().PrintPreviewPageName.FullName + "?action=AllInOne"));
+            OpenInNewTab(uri);
+            ActivePage = myPages.Last();
+        }
+
+        private void OnPageClosed(PageViewModel pageViewModel)
+        {
+            if (ActivePage == pageViewModel)
             {
                 ActivePage = null;
             }
 
             pageViewModel.Dispose();
 
-            myPages.Remove( pageViewModel );
+            myPages.Remove(pageViewModel);
         }
 
         // http://avalondock.codeplex.com/discussions/472420
         private class DummyTool : ToolViewModel
         {
             private DummyTool()
-                : base( "dummy" )
+                : base("dummy")
             {
                 IsVisible = false;
             }
@@ -100,61 +114,61 @@ namespace Plainion.Notebook
 
         private void OnShutdown()
         {
-            if( myProjectService.Project != null )
+            if (myProjectService.Project != null)
             {
-                Serializer.Value.SaveLayout( myProjectService.Project );
+                Serializer.Value.SaveLayout(myProjectService.Project);
             }
         }
 
         // we need to cleanup the WebViews before the new deamon gets started
-        private void OnProjectChanging( object sender, EventArgs e )
+        private void OnProjectChanging(object sender, EventArgs e)
         {
             SearchResults = null;
             Navigation = null;
             ActivePage = null;
 
-            foreach( var page in myPages )
+            foreach (var page in myPages)
             {
                 page.Dispose();
             }
 
             myPages.Clear();
 
-            if( !myTools.Contains( DummyTool.Instance ) )
+            if (!myTools.Contains(DummyTool.Instance))
             {
-                myTools.Add( DummyTool.Instance );
+                myTools.Add(DummyTool.Instance);
             }
 
-            foreach( var tool in myTools.Where( t => t != DummyTool.Instance ).ToList() )
+            foreach (var tool in myTools.Where(t => t != DummyTool.Instance).ToList())
             {
                 var disposable = tool as IDisposable;
-                if( disposable != null )
+                if (disposable != null)
                 {
                     disposable.Dispose();
                 }
 
-                myTools.Remove( tool );
+                myTools.Remove(tool);
             }
         }
 
-        private void OnProjectChanged( object sender, EventArgs e )
+        private void OnProjectChanged(object sender, EventArgs e)
         {
-            var layoutWasDeserialized = Serializer.Value.LoadLayout( myProjectService.Project );
+            var layoutWasDeserialized = Serializer.Value.LoadLayout(myProjectService.Project);
 
-            if( !myPages.Any() )
+            if (!myPages.Any())
             {
-                myPages.Add( myPageViewModelFactory.Create( new DisplayUrlRequest( WikiService.HomePageUri ) ) );
+                myPages.Add(myPageViewModelFactory.Create(new DisplayUrlRequest(WikiService.HomePageUri)));
             }
 
             ActivePage = myPages.Last();
 
-            if( !myTools.Where( t => t != DummyTool.Instance ).Any() )
+            if (!myTools.Where(t => t != DummyTool.Instance).Any())
             {
-                Navigation = new NavigationViewModel( WikiService, myProjectService, this );
-                myTools.Add( Navigation );
+                Navigation = new NavigationViewModel(WikiService, myProjectService, this);
+                myTools.Add(Navigation);
 
-                SearchResults = new SearchResultsViewModel( myProjectService, this );
-                myTools.Add( SearchResults );
+                SearchResults = new SearchResultsViewModel(myProjectService, this);
+                myTools.Add(SearchResults);
             }
             else
             {
@@ -162,15 +176,16 @@ namespace Plainion.Notebook
                 SearchResults = myTools.OfType<SearchResultsViewModel>().Single();
             }
 
-            myTools.Remove( DummyTool.Instance );
+            myTools.Remove(DummyTool.Instance);
 
-            InitTool( Navigation, layoutWasDeserialized );
-            InitTool( SearchResults, layoutWasDeserialized );
+            InitTool(Navigation, layoutWasDeserialized);
+            InitTool(SearchResults, layoutWasDeserialized);
 
-            OnPropertyChanged( "IsProjectLoaded" );
+            OnPropertyChanged("IsProjectLoaded");
+            PrintCommand.RaiseCanExecuteChanged();
         }
 
-        private void InitTool( ToolViewModel tool, bool layoutWasDeserialized )
+        private void InitTool(ToolViewModel tool, bool layoutWasDeserialized)
         {
             tool.IsSelected = false;
             tool.IsActive = false;
@@ -178,15 +193,15 @@ namespace Plainion.Notebook
 
             var y = DockingManager.Value.Layout.Descendents().OfType<LayoutAnchorable>().ToList();
             var layoutItem = DockingManager.Value.Layout.Descendents().OfType<LayoutAnchorable>()
-                .Single( x => x.ContentId == tool.ContentId );
+                .Single(x => x.ContentId == tool.ContentId);
 
-            if( !layoutWasDeserialized )
+            if (!layoutWasDeserialized)
             {
                 layoutItem.AutoHideMinHeight = 100;
                 layoutItem.AutoHideMinWidth = 200;
             }
 
-            if( layoutItem.IsAutoHidden )
+            if (layoutItem.IsAutoHidden)
             {
                 // HACK: i found no other way to auto hide on startup without temporarily seeing the pane
                 layoutItem.ToggleAutoHide();
@@ -214,13 +229,13 @@ namespace Plainion.Notebook
         public NavigationViewModel Navigation
         {
             get { return myNavigation; }
-            private set { SetProperty( ref myNavigation, value ); }
+            private set { SetProperty(ref myNavigation, value); }
         }
 
         public SearchResultsViewModel SearchResults
         {
             get { return mySearchResults; }
-            private set { SetProperty( ref mySearchResults, value ); }
+            private set { SetProperty(ref mySearchResults, value); }
         }
 
         private void OnApplicationReady()
@@ -234,39 +249,39 @@ namespace Plainion.Notebook
             ProjectLifecycleViewModel.AutoSaveNewProject = true;
 
             var args = Environment.GetCommandLineArgs();
-            if( args.Length == 2 )
+            if (args.Length == 2)
             {
-                myProjectService.Project = myPersistenceService.Load( args[ 1 ] );
+                myProjectService.Project = myPersistenceService.Load(args[1]);
             }
         }
 
-        public void OpenPageSourceView( Uri url )
+        public void OpenPageSourceView(Uri url)
         {
-            var request = new DisplayUrlRequest( url );
+            var request = new DisplayUrlRequest(url);
             request.IsSourceView = true;
 
-            var pageViewModel = myPageViewModelFactory.Create( request );
+            var pageViewModel = myPageViewModelFactory.Create(request);
 
-            myPages.Add( pageViewModel );
+            myPages.Add(pageViewModel);
 
             ActivePage = pageViewModel;
         }
 
-        public void OpenInNewTab( Uri url )
+        public void OpenInNewTab(Uri url)
         {
-            var pageViewModel = myPageViewModelFactory.Create( new DisplayUrlRequest( url ) );
+            var pageViewModel = myPageViewModelFactory.Create(new DisplayUrlRequest(url));
 
-            myPages.Add( pageViewModel );
+            myPages.Add(pageViewModel);
         }
 
-        public void OpenInExternalBrowser( Uri url )
+        public void OpenInExternalBrowser(Uri url)
         {
-            Process.Start( url.ToString() );
+            Process.Start(url.ToString());
         }
 
-        public void OpenInActiveTab( Uri url )
+        public void OpenInActiveTab(Uri url)
         {
-            if( url.Query.Contains( "action=search" ) )
+            if (url.Query.Contains("action=search"))
             {
                 SearchResults.Uri = url;
 
@@ -274,43 +289,43 @@ namespace Plainion.Notebook
                 SearchResults.IsActive = true;
                 SearchResults.IsSelected = true;
             }
-            else if( ActivePage != null )
+            else if (ActivePage != null)
             {
                 ActivePage.Uri = url;
             }
             else
             {
-                OpenInNewTab( url );
+                OpenInNewTab(url);
             }
         }
 
         public PageViewModel ActivePage
         {
             get { return myActivePage; }
-            set { SetProperty( ref myActivePage, value ); }
+            set { SetProperty(ref myActivePage, value); }
         }
 
         [Export]
-        private void OnLayoutSerialization( object sender, LayoutSerializationCallbackEventArgs args )
+        private void OnLayoutSerialization(object sender, LayoutSerializationCallbackEventArgs args)
         {
-            if( args.Model.ContentId == NavigationViewModel.ToolContentId )
+            if (args.Model.ContentId == NavigationViewModel.ToolContentId)
             {
-                var navi = new NavigationViewModel( WikiService, myProjectService, this );
-                myTools.Add( navi );
+                var navi = new NavigationViewModel(WikiService, myProjectService, this);
+                myTools.Add(navi);
                 args.Content = navi;
             }
-            else if( args.Model.ContentId == SearchResultsViewModel.ToolContentId )
+            else if (args.Model.ContentId == SearchResultsViewModel.ToolContentId)
             {
-                var searchResults = new SearchResultsViewModel( myProjectService, this );
-                myTools.Add( searchResults );
+                var searchResults = new SearchResultsViewModel(myProjectService, this);
+                myTools.Add(searchResults);
                 args.Content = searchResults;
             }
-            else if( !string.IsNullOrWhiteSpace( args.Model.ContentId ) )
+            else if (!string.IsNullOrWhiteSpace(args.Model.ContentId))
             {
-                var request = new DisplayUrlRequest( WikiService.GetUriFromPath( args.Model.ContentId ) );
-                var pageViewModel = myPageViewModelFactory.Create( request );
+                var request = new DisplayUrlRequest(WikiService.GetUriFromPath(args.Model.ContentId));
+                var pageViewModel = myPageViewModelFactory.Create(request);
 
-                myPages.Add( pageViewModel );
+                myPages.Add(pageViewModel);
 
                 args.Content = pageViewModel;
             }
