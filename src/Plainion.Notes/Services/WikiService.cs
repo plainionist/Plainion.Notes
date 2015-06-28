@@ -6,8 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Documents;
 using System.Windows.Markup;
+using Microsoft.Practices.Prism.PubSubEvents;
+using Plainion.Composition;
 using Plainion.IO;
 using Plainion.IO.MemoryFS;
+using Plainion.Prism.Events;
 using Plainion.Wiki;
 using Plainion.Wiki.AST;
 using Plainion.Wiki.Auditing;
@@ -18,9 +21,6 @@ using Plainion.Wiki.Query;
 using Plainion.Wiki.Rendering;
 using Plainion.Wiki.Xaml;
 using Plainion.Wiki.Xaml.Rendering;
-using Microsoft.Practices.Prism.PubSubEvents;
-using Plainion.Composition;
-using Plainion.Prism.Events;
 
 namespace Plainion.Notes.Services
 {
@@ -113,17 +113,9 @@ namespace Plainion.Notes.Services
             }
         }
 
-        public PageName HomePage
-        {
-            get;
-            private set;
-        }
+        public PageName HomePage { get; private set; }
 
-        public ObservableCollection<PageName> Pages
-        {
-            get;
-            private set;
-        }
+        public ObservableCollection<PageName> Pages { get; private set; }
 
         public FlowDocument Render( PageName page )
         {

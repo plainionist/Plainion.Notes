@@ -6,8 +6,8 @@ using System.Web;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Navigation;
-using Plainion.Notes.Services;
 using Microsoft.Practices.Prism.Commands;
+using Plainion.Notes.Services;
 using Plainion.Windows;
 
 namespace Plainion.Notes.ViewModels
