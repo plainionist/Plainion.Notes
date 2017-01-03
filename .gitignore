@@ -20,3 +20,5 @@
 /packages/Iron.Linq.Dynamic.1.1.0.0/
 /packages/Plainion.AppFw.Shell.1.0.0.0/
 /packages/Moq.4.2.1502.0911
+/TestResult.xml
+/build/.fake
