@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\Workspace\Plainion\Plainion.Notes\bin\pCI\Plainion.Wiki.Html.Tests.dll" total="492" errors="0" failures="2" not-run="1" inconclusive="0" ignored="1" skipped="0" invalid="0" date="2017-01-03" time="23:10:27">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Workspace\Plainion\Plainion.Notes" machine-name="MD1F8DEC" user="ssmosett" user-domain="AD005" />
+  <culture-info current-culture="de-DE" current-uiculture="en-US" />
+  <test-suite type="Test Project" name="" executed="True" result="Failure" success="False" time="6.393" asserts="0">
+    <results>
+      <test-suite type="Assembly" name="D:\Workspace\Plainion\Plainion.Notes\bin\pCI\Plainion.Wiki.Html.Tests.dll" executed="True" result="Failure" success="False" time="0.874" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Plainion" executed="True" result="Failure" success="False" time="0.865" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Wiki" executed="True" result="Failure" success="False" time="0.865" asserts="0">
+                <results>
+                  <test-suite type="Namespace" name="Html" executed="True" result="Failure" success="False" time="0.824" asserts="0">
+                    <results>
+                      <test-suite type="Namespace" name="UnitTests" executed="True" result="Failure" success="False" time="0.824" asserts="0">
+                        <results>
+                          <test-suite type="Namespace" name="AST" executed="True" result="Success" success="True" time="0.048" asserts="0">
+                            <results>
+                              <test-suite type="TestFixture" name="HtmlBlockTest" executed="True" result="Success" success="True" time="0.047" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.Html.UnitTests.AST.HtmlBlockTest.AppendLine_WhenCalled_AddsLineToContent" executed="True" result="Success" success="True" time="0.028" asserts="1" />
+                                  <test-case name="Plainion.Wiki.Html.UnitTests.AST.HtmlBlockTest.Ctor_WithLines_LinesAreAddedToContent" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                  <test-case name="Plainion.Wiki.Html.UnitTests.AST.HtmlBlockTest.Ctor_WithoutLines_NoContentAdded" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                                </results>
+                              </test-suite>
+                            </results>
+                          </test-suite>
+                          <test-suite type="Namespace" name="Rendering" executed="True" result="Failure" success="False" time="0.769" asserts="0">
+                            <results>
+                              <test-suite type="TestFixture" name="HtmlRenderActionCatalogTests" executed="True" result="Success" success="True" time="0.583" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.HtmlRenderActionCatalogTests.Composition_WhenHappened_WikiDefaultStepsFound" executed="True" result="Success" success="True" time="0.582" asserts="6" />
+                                </results>
+                              </test-suite>
+                              <test-suite type="TestFixture" name="HtmlRendererTest" executed="True" result="Success" success="True" time="0.034" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.HtmlRendererTest.Ctor_WhenCalled_RenderActionsAreAvailable" executed="True" result="Success" success="True" time="0.029" asserts="2" />
+                                  <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.HtmlRendererTest.GetStylesheet_WhenCalled_WillNeverReturnNull" executed="True" result="Success" success="True" time="0.004" asserts="2" />
+                                </results>
+                              </test-suite>
+                              <test-suite type="Namespace" name="RenderActions" executed="True" result="Failure" success="False" time="0.145" asserts="0">
+                                <results>
+                                  <test-suite type="TestFixture" name="AnchorRenderActionTests" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.AnchorRenderActionTests.Render_WhenCalled_AnchorIsWritten" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                                    </results>
+                                  </test-suite>
+                                  <test-suite type="TestFixture" name="BulletListRenderActionTests" executed="True" result="Success" success="True" time="0.005" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.BulletListRenderActionTests.Render_NonOrderList_HtmlListWritten" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.BulletListRenderActionTests.Render_OrderList_HtmlListWritten" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.BulletListRenderActionTests.Render_WithListItems_HtmlListWritten" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                    </results>
+                                  </test-suite>
+                                  <test-suite type="TestFixture" name="ContentRenderActionTests" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.ContentRenderActionTests.Render_WhenCalled_NotOutputWritten" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.ContentRenderActionTests.Render_WithChildren_RenderingCalledForChildren" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                    </results>
+                                  </test-suite>
+                                  <test-suite type="TestFixture" name="HeadlineRenderActionTests" executed="True" result="Failure" success="False" time="0.061" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.HeadlineRenderActionTests.Render_WhenCalled_AnchorCreatedForHeadline" executed="True" result="Failure" success="False" time="0.037" asserts="1">
+                                        <failure>
+                                          <message><![CDATA[  Expected: String containing "<a name="Sometext">"
+  But was:  "<a name="Some text"><h3>Some text</h3></a>"
+]]></message>
+                                          <stack-trace><![CDATA[at Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.HeadlineRenderActionTests.Render_WhenCalled_AnchorCreatedForHeadline() in d:\Workspace\Plainion\Plainion.Notes\src\Plainion.Wiki.Html.Tests\Rendering\RenderActions\HeadlineRenderActionTests.cs:line 32
+]]></stack-trace>
+                                        </failure>
+                                      </test-case>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.HeadlineRenderActionTests.Render_WhenCalled_HtmlHeadlineWritten" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                    </results>
+                                  </test-suite>
+                                  <test-suite type="TestFixture" name="HtmlBlockRenderActionTests" executed="True" result="Success" success="True" time="0.001" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.HtmlBlockRenderActionTests.Render_WhenCalled_HtmlContentJustWritten" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                    </results>
+                                  </test-suite>
+                                  <test-suite type="TestFixture" name="LineBreakRenderActionTests" executed="True" result="Success" success="True" time="0.001" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.LineBreakRenderActionTests.Render_WhenCalled_HtmlLineBreakJustWritten" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                    </results>
+                                  </test-suite>
+                                  <test-suite type="TestFixture" name="LinkRenderActionTests" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.LinkRenderActionTests.Render_WhenCalled_HtmlLinkWritten" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                                    </results>
+                                  </test-suite>
+                                  <test-suite type="TestFixture" name="ListItemRenderActionTests" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.ListItemRenderActionTests.Render_WhenCalled_HtmlListItemWritten" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.ListItemRenderActionTests.Render_WithText_RenderingCalledForChildren" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                    </results>
+                                  </test-suite>
+                                  <test-suite type="TestFixture" name="PageBodyRenderActionTests" executed="True" result="Success" success="True" time="0.005" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PageBodyRenderActionTests.Render_WhenCalled_HtmlPageBodyWritten" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PageBodyRenderActionTests.Render_WithText_RenderingCalledForChildren" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                                    </results>
+                                  </test-suite>
+                                  <test-suite type="TestFixture" name="PageRenderActionTests" executed="True" result="Success" success="True" time="0.021" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PageRenderActionTests.Render_PageTypeIsContent_EditWithDoubleClickIsEnabled" executed="True" result="Success" success="True" time="0.005" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PageRenderActionTests.Render_PageTypeIsEdit_EditWithDoubleClickIsDisabled" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PageRenderActionTests.Render_WhenCalled_PageContentIsRendered" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PageRenderActionTests.Render_WithExternalJavascript_JavascriptIsReferenced" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PageRenderActionTests.Render_WithExternalStylesheet_StylesheetIsReferenced" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PageRenderActionTests.Render_Withfooter_footerIsRendered" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PageRenderActionTests.Render_WithHeader_HeaderIsRendered" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PageRenderActionTests.Render_WithoutExternalJavascript_NoJavascriptReferenced" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PageRenderActionTests.Render_WithoutExternalStylesheet_NoStylesheetReferenced" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PageRenderActionTests.Render_Withsidebar_sidebarIsRendered" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                    </results>
+                                  </test-suite>
+                                  <test-suite type="TestFixture" name="ParagraphRenderActionTests" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.ParagraphRenderActionTests.Render_WithText_HtmlParagraphWritten" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.ParagraphRenderActionTests.Render_WithText_RenderingCalledForChildren" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                    </results>
+                                  </test-suite>
+                                  <test-suite type="TestFixture" name="PlainTextRenderActionTests" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PlainTextRenderActionTests.Render_WhenCalled_EncodingIsHandledPropperly" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PlainTextRenderActionTests.Render_WhenCalled_TextIsWritten" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                    </results>
+                                  </test-suite>
+                                  <test-suite type="TestFixture" name="PreformattedTextRenderActionTests" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.PreformattedTextRenderActionTests.Render_WhenCalled_HtmlPreBlockWritten" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                    </results>
+                                  </test-suite>
+                                  <test-suite type="TestFixture" name="SiteSearchFormRenderActionTests" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.SiteSearchFormRenderActionTests.Render_WhenCalled_SiteSearchFormWritten" executed="True" result="Success" success="True" time="0.002" asserts="2" />
+                                    </results>
+                                  </test-suite>
+                                  <test-suite type="TestFixture" name="TextBlockRenderActionTests" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                                    <results>
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.TextBlockRenderActionTests.Render_WhenCalled_NotOutputWritten" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                      <test-case name="Plainion.Wiki.Html.UnitTests.Rendering.RenderActions.TextBlockRenderActionTests.Render_WithChildren_RenderingCalledForChildren" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                    </results>
+                                  </test-suite>
+                                </results>
+                              </test-suite>
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                  <test-suite type="Namespace" name="UnitTests" executed="True" result="Success" success="True" time="0.004" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="DefaultErrorPageHandlerTests" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                        <results>
+                          <test-case name="Plainion.Wiki.UnitTests.DefaultErrorPageHandlerTests.CreateGeneralErrorPage_WhenCalled_PageIsReturned" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                          <test-case name="Plainion.Wiki.UnitTests.DefaultErrorPageHandlerTests.CreatePageNotFoundPage_WhenCalled_PageIsReturned" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+      <test-suite type="Assembly" name="D:\Workspace\Plainion\Plainion.Notes\bin\pCI\Plainion.Wiki.IntegrationTests.dll" executed="True" result="Success" success="True" time="1.722" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Plainion" executed="True" result="Success" success="True" time="1.715" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Wiki" executed="True" result="Success" success="True" time="1.715" asserts="0">
+                <results>
+                  <test-suite type="SetUpFixture" name="IntegrationTests" executed="True" result="Success" success="True" time="1.714" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="PageAttributeTests" executed="True" result="Success" success="True" time="0.764" asserts="0">
+                        <results>
+                          <test-case name="Plainion.Wiki.IntegrationTests.PageAttributeTests.RenderDefaultHeader" executed="True" result="Success" success="True" time="0.610" asserts="41" />
+                          <test-case name="Plainion.Wiki.IntegrationTests.PageAttributeTests.RenderPageName" executed="True" result="Success" success="True" time="0.029" asserts="34" />
+                          <test-case name="Plainion.Wiki.IntegrationTests.PageAttributeTests.RenderRecentEdits" executed="True" result="Success" success="True" time="0.066" asserts="35" />
+                          <test-case name="Plainion.Wiki.IntegrationTests.PageAttributeTests.RenderReverseLinks" executed="True" result="Success" success="True" time="0.049" asserts="34" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="QueryTests" executed="True" result="Success" success="True" time="0.878" asserts="0">
+                        <results>
+                          <test-case name="Plainion.Wiki.IntegrationTests.QueryTests.From_DownOnly" executed="True" result="Success" success="True" time="0.218" asserts="37" />
+                          <test-case name="Plainion.Wiki.IntegrationTests.QueryTests.Select_AttributeValue" executed="True" result="Success" success="True" time="0.057" asserts="37" />
+                          <test-case name="Plainion.Wiki.IntegrationTests.QueryTests.Select_Parent" executed="True" result="Success" success="True" time="0.057" asserts="38" />
+                          <test-case name="Plainion.Wiki.IntegrationTests.QueryTests.Select_Section" executed="True" result="Success" success="True" time="0.049" asserts="37" />
+                          <test-case name="Plainion.Wiki.IntegrationTests.QueryTests.Where_AttributeDefinedMultipleTimesOnPage_SelectPage" executed="True" result="Success" success="True" time="0.046" asserts="37" />
+                          <test-case name="Plainion.Wiki.IntegrationTests.QueryTests.Where_AttributeDefinedMultipleTimesOnPage_SelectParent" executed="True" result="Success" success="True" time="0.046" asserts="41" />
+                          <test-case name="Plainion.Wiki.IntegrationTests.QueryTests.Where_AttributeDefinedOnPage" executed="True" result="Success" success="True" time="0.064" asserts="39" />
+                          <test-case name="Plainion.Wiki.IntegrationTests.QueryTests.Where_AttributeEqualsString" executed="True" result="Success" success="True" time="0.152" asserts="39" />
+                          <test-case name="Plainion.Wiki.IntegrationTests.QueryTests.Where_AttributeEqualsStringAndLinkedFunction" executed="True" result="Success" success="True" time="0.110" asserts="41" />
+                          <test-case name="Plainion.Wiki.IntegrationTests.QueryTests.Where_PageLinkedByPageOfQuery" executed="True" result="Success" success="True" time="0.064" asserts="38" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="RenderingTests" executed="True" result="Success" success="True" time="0.064" asserts="0">
+                        <results>
+                          <test-case name="Plainion.Wiki.IntegrationTests.RenderingTests.RenderEmptyPageWithoutStylesheet" executed="True" result="Success" success="True" time="0.029" asserts="31" />
+                          <test-case name="Plainion.Wiki.IntegrationTests.RenderingTests.RenderPageAttributesInSideBar" executed="False" result="Ignored">
+                            <reason>
+                              <message><![CDATA[Currently not supported. Conflicting requirements]]></message>
+                            </reason>
+                          </test-case>
+                          <test-case name="Plainion.Wiki.IntegrationTests.RenderingTests.RenderSimplePage" executed="True" result="Success" success="True" time="0.030" asserts="37" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+      <test-suite type="Assembly" name="D:\Workspace\Plainion\Plainion.Notes\bin\pCI\Plainion.Wiki.Tests.dll" executed="True" result="Failure" success="False" time="2.869" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Plainion" executed="True" result="Failure" success="False" time="2.862" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Wiki" executed="True" result="Failure" success="False" time="2.861" asserts="0">
+                <results>
+                  <test-suite type="SetUpFixture" name="UnitTests" executed="True" result="Failure" success="False" time="2.861" asserts="0">
+                    <results>
+                      <test-suite type="Namespace" name="AST" executed="True" result="Failure" success="False" time="0.559" asserts="0">
+                        <results>
+                          <test-suite type="TestFixture" name="AnchorTests" executed="True" result="Success" success="True" time="0.033" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.AnchorTests.Clone_WhenCalled_ShouldNotThrow" executed="True" result="Success" success="True" time="0.011" asserts="0" />
+                              <test-suite type="ParameterizedTest" name="Ctor_InvalidName_ShouldThrowException" executed="True" result="Success" success="True" time="0.006" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.AnchorTests.Ctor_InvalidName_ShouldThrowException(null)" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.AnchorTests.Ctor_InvalidName_ShouldThrowException(&quot;&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.AnchorTests.Ctor_InvalidName_ShouldThrowException(&quot; &quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                </results>
+                              </test-suite>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.AnchorTests.Ctor_ValidName_NamePropertyShouldBeSet" executed="True" result="Success" success="True" time="0.006" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.AnchorTests.Ctor_WhenCalled_ParentPropertyShouldBeNull" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="BulletListTest" executed="True" result="Success" success="True" time="0.049" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.BulletListTest.ItemsProperty" executed="True" result="Success" success="True" time="0.006" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.BulletListTest.OnlyConsumesListItems" executed="True" result="Success" success="True" time="0.042" asserts="32" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="CompiledQueryTest" executed="True" result="Success" success="True" time="0.193" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.CompiledQueryTest.Ctor_DefinitionIsNull_ShouldThrow" executed="True" result="Success" success="True" time="0.185" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.CompiledQueryTest.Ctor_FromClauseIsNull_ShouldThrow" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.CompiledQueryTest.Ctor_SelectClauseIsNull_ShouldThrow" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.CompiledQueryTest.Ctor_WhenCalled_AllPropertiesShouldBeSet" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.CompiledQueryTest.Ctor_WhereClauseIsNull_ShouldThrow" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="ContentTest" executed="True" result="Success" success="True" time="0.006" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.ContentTest.ConsumeEverything" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.ContentTest.CreateEmpty" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.ContentTest.CreateWithChildren" executed="True" result="Success" success="True" time="0.003" asserts="4" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="HeadlineTest" executed="True" result="Failure" success="False" time="0.011" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.HeadlineTest.AnchorAndWhitespaces" executed="True" result="Failure" success="False" time="0.009" asserts="1">
+                                <failure>
+                                  <message><![CDATA[  Expected string length 24 but was 27. Strings differ at index 1.
+  Expected: "Aheadlinewithwhitespaces"
+  But was:  "A headline with whitespaces"
+  ------------^
+]]></message>
+                                  <stack-trace><![CDATA[at Plainion.Wiki.UnitTests.AST.HeadlineTest.AnchorAndWhitespaces() in d:\Workspace\Plainion\Plainion.Notes\src\Plainion.Wiki.Tests\AST\HeadlineTest.cs:line 23
+]]></stack-trace>
+                                </failure>
+                              </test-case>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.HeadlineTest.Creation" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="LinkTest" executed="True" result="Success" success="True" time="0.028" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_FileUrl_ShouldBeExternal" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_FileUrlForFirefox_ShouldBeExternal" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_HttpUrl_ShouldBeExternal" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_PageName_TextEqualsNotRootedPageFullName" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_PageName_UrlEqualsPageFullName" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_PageNameAndTextAndAnchor_PropertiesShouldBeSet" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_PageNameAsUrl_ShouldNotBeExternal" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_PageNameAsUrl_UrlShouldEqualPageName" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_UncPath_ShouldBeExternal" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_UrlAndText_ShouldBeByPassed" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_UrlWithoutAnchor_UrlWillBeKeptAsIs" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_UrlWithoutAnchor_UrlWithoutAnchorPropertyEqualsUrl" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_UrlWithoutText_TextShouldEqualUrl" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_UrlWithTextAndAnchor_UrlShouldBeParsedProperly" executed="True" result="Success" success="True" time="0.000" asserts="4" />
+                              <test-suite type="ParameterizedTest" name="Ctor_WithEmptyUrl_Throws" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_WithEmptyUrl_Throws(null)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.LinkTest.Ctor_WithEmptyUrl_Throws(&quot;&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                </results>
+                              </test-suite>
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="ListItemTest" executed="True" result="Success" success="True" time="0.015" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.ListItemTest.ContainsOnlyOneTextBlock" executed="True" result="Success" success="True" time="0.005" asserts="5" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.ListItemTest.CreateEmpty" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.ListItemTest.CreateWithText" executed="True" result="Success" success="True" time="0.005" asserts="3" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.ListItemTest.OnlyConsumesTextAndLists" executed="True" result="Success" success="True" time="0.001" asserts="32" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.ListItemTest.WithTextAndList" executed="True" result="Success" success="True" time="0.001" asserts="5" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="PageAttributeTest" executed="True" result="Success" success="True" time="0.007" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageAttributeTest.AttributeDefinitionWithTypeAndName" executed="True" result="Success" success="True" time="0.000" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageAttributeTest.AttributeReferenceWithTypeAndName" executed="True" result="Success" success="True" time="0.000" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageAttributeTest.Ctor_WithNullName_IsAccepted" executed="True" result="Success" success="True" time="0.000" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageAttributeTest.Ctor_WithNullType_Throws" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageAttributeTest.IsDefinition_ForDefinition_ReturnsTrue" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageAttributeTest.TrimTypeAndNameAndValue" executed="True" result="Success" success="True" time="0.000" asserts="4" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="PageBodyTest" executed="True" result="Success" success="True" time="0.011" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageBodyTest.ConsumePlainText" executed="True" result="Success" success="True" time="0.003" asserts="13" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageBodyTest.ConsumeTextBlock" executed="True" result="Success" success="True" time="0.001" asserts="13" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageBodyTest.CreateEmpty" executed="True" result="Success" success="True" time="0.001" asserts="3" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageBodyTest.CreateWithList" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageBodyTest.CreateWithName" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="PageLeafTest" executed="True" result="Success" success="True" time="0.007" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageLeafTest.Ctor_WhenCalled_ParentAndRootAreNull" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageLeafTest.GetParent_WithParent_ReturnsParent" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageLeafTest.GetParentOfType_NoSuchParent_ReturnsNull" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageLeafTest.GetParentOfType_SuchParentAvailable_ReturnsParent" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageLeafTest.GetRoot_WithRoot_ReturnsRoot" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="PageNamespaceTest" executed="True" result="Success" success="True" time="0.052" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.Add_WhenCalled_NamespaceIsAdded" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.AsPath_EmptyNamespace_ShouldContainSingleSlashOnly" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.AsPath_NonEmptyNamespace_ShouldJoinElementsWithSlashes" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.Create_WithElements_ShouldCopyElementsToProperty" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                              <test-suite type="ParameterizedTest" name="Create_WithEmptyElements_ShouldCreateEmptyNamespace" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.Create_WithEmptyElements_ShouldCreateEmptyNamespace(null)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.Create_WithEmptyElements_ShouldCreateEmptyNamespace(System.String[])" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                </results>
+                              </test-suite>
+                              <test-suite type="ParameterizedTest" name="Create_WithEmptyPath_ShouldCreateEmptyNamespace" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.Create_WithEmptyPath_ShouldCreateEmptyNamespace(null)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.Create_WithEmptyPath_ShouldCreateEmptyNamespace(&quot;&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.Create_WithEmptyPath_ShouldCreateEmptyNamespace(&quot; &quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                </results>
+                              </test-suite>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.Create_WithoutParameters_ShouldCreateEmptyNamespace" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.CutOffLeft_InvalidNamespace_Throws" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.CutOffLeft_Itself_ReturnsEmptyNamespace" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.CutOffLeft_ValidPrefix_Succeeds" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.Elements_EmptyNamespace_ShouldContainEmptyArray" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.Equals_NamespacesWithDifferentElements_ShouldBeFalse" executed="True" result="Success" success="True" time="0.002" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.Equals_NamespacesWithSameElements_ShouldBeTrue" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.Equals_WithNull_ShouldBeFalse" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.StartsWith_EmptyPrefix_ShouldBeTrue" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.StartsWith_InvalidPrefix_ShouldBeFalse" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.StartsWith_TooLongInput_ShouldBeFalse" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNamespaceTest.StartsWith_ValidPrefix_ShouldBeTrue" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="PageNameTest" executed="True" result="Success" success="True" time="0.030" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Create_NameOnly_FullNameContainsNameOnly" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-suite type="ParameterizedTest" name="Create_WithEmptyName_ShouldThrow" executed="True" result="Success" success="True" time="0.004" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Create_WithEmptyName_ShouldThrow(null)" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Create_WithEmptyName_ShouldThrow(&quot;&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Create_WithEmptyName_ShouldThrow(&quot; &quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                </results>
+                              </test-suite>
+                              <test-suite type="ParameterizedTest" name="Create_WithEmptyNameOnly_ShouldThrowException" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Create_WithEmptyNameOnly_ShouldThrowException(null)" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Create_WithEmptyNameOnly_ShouldThrowException(&quot;&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Create_WithEmptyNameOnly_ShouldThrowException(&quot; &quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                </results>
+                              </test-suite>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Create_WithEmptyNamespace_FullNameContainsNameOnly" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Create_WithNameAndNamespace_FullNameJoinsPathAndName" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Create_WithNameAndNamespace_NameAndNamespacePropertiesAreSet" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Create_WithNameOnly_NamePropertyShouldBeSet" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Create_WithNameOnly_NamespaceShouldBeEmpty" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Create_WithNullNamespace_ShouldThrow" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-suite type="ParameterizedTest" name="CreateFromPath_WithEmptyPath_ShouldThrowException" executed="True" result="Success" success="True" time="0.004" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.CreateFromPath_WithEmptyPath_ShouldThrowException(null)" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.CreateFromPath_WithEmptyPath_ShouldThrowException(&quot;&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.CreateFromPath_WithEmptyPath_ShouldThrowException(&quot; &quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                </results>
+                              </test-suite>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.CreateFromPath_WithPath_FullNameShouldEqualInput" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.CreateFromPath_WithPath_NameAndNamespacePropertiesShouldBeSet" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Equals_PageNamesWithDifferentFullName_ShouldBeFalse" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Equals_PageNamesWithSameFullName_ShouldBeTrue" executed="True" result="Success" success="True" time="0.000" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNameTest.Equals_WithNull_ShouldBeFalse" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="PageNodeTest" executed="True" result="Success" success="True" time="0.021" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNodeTest.Consume_UnsupportedPartWithoutParent_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNodeTest.Consume_WithAcceptedType_ParentOfChildWillBeSet" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNodeTest.Consume_WithUnsupportedPart_WillBePassedToParent" executed="True" result="Success" success="True" time="0.001" asserts="5" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNodeTest.Ctor_WhenCalled_ParentIsNull" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNodeTest.Ctor_WithChildren_ChildrenAreAdded" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNodeTest.Ctor_WithNull_Throws" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNodeTest.Ctor_WithoutChildren_ChildrenAreEmpty" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNodeTest.RemoveAllChildren_WhenCalled_ClearsChildrenAndResetsParentReference" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNodeTest.RemoveChild_ChildDoesNotExist_NothingHappens" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNodeTest.RemoveChild_ChildExists_ChildWillBeRemoved" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNodeTest.RemoveChild_ChildExists_ParentOfChildSetToNull" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNodeTest.RemoveChild_WithNull_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageNodeTest.ReplaceChild_WhenCalled_ChildWillBeReplacedAndParentReferenceChanged" executed="True" result="Success" success="True" time="0.001" asserts="3" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="PageTests" executed="True" result="Success" success="True" time="0.017" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageTests.SetContent_ContentAlreadySet_ContentIsReplaced" executed="True" result="Success" success="True" time="0.002" asserts="5" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageTests.SetContent_WhenCalled_ContentBecomesChild" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageTests.SetContent_WhenCalled_ContentIsSet" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageTests.SetFooter_FooterAlreadySet_FooterIsReplaced" executed="True" result="Success" success="True" time="0.001" asserts="5" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageTests.SetFooter_WhenCalled_FooterBecomesChild" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageTests.SetFooter_WhenCalled_FooterIsSet" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageTests.SetHeader_HeaderAlreadySet_HeaderIsReplaced" executed="True" result="Success" success="True" time="0.000" asserts="5" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageTests.SetHeader_WhenCalled_HeaderBecomesChild" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageTests.SetHeader_WhenCalled_HeaderIsSet" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageTests.SetSideBar_SideBarAlreadySet_SideBarIsReplaced" executed="True" result="Success" success="True" time="0.000" asserts="5" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageTests.SetSideBar_WhenCalled_SideBarBecomesChild" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PageTests.SetSideBar_WhenCalled_SideBarIsSet" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="ParagraphTest" executed="True" result="Success" success="True" time="0.008" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.ParagraphTest.CanConsume_TextBlockAndPreformattedText" executed="True" result="Success" success="True" time="0.001" asserts="32" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.ParagraphTest.ContainsEmptyTextBlockAfterCreation" executed="True" result="Success" success="True" time="0.000" asserts="5" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.ParagraphTest.ContainsOnlyOneTextBlock" executed="True" result="Success" success="True" time="0.001" asserts="7" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.ParagraphTest.CreateWithChildren" executed="True" result="Success" success="True" time="0.001" asserts="5" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.ParagraphTest.HandleNullAsEmptyChildrenOnCreation" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="PlainTextTests" executed="True" result="Success" success="True" time="0.004" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PlainTextTests.Clone_WhenCalled_ShouldNotThrow" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PlainTextTests.Consume_WhenCalled_AddsText" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PlainTextTests.Ctor_WithoutText_TextWillBeEmpty" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.PlainTextTests.Ctor_WithText_TextWillBeSet" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="QueryDefinitionTests" executed="True" result="Success" success="True" time="0.007" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.QueryDefinitionTests.Ctor_WhenCalled_AttributeNameIsNull" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.QueryDefinitionTests.Ctor_WhenCalled_AttributeTypeEqualsQuery" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.QueryDefinitionTests.Ctor_WithAllExpressions_PropertiesShouldBeSet" executed="True" result="Success" success="True" time="0.001" asserts="3" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.QueryDefinitionTests.Ctor_WithEmptyWhereExpr_ShouldThrow" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.QueryDefinitionTests.Ctor_WithNullWhereExpr_ShouldThrow" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="TextBlockTest" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.AST.TextBlockTest.Consume_FirstPreformattedText_AddedAsChild" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.TextBlockTest.Consume_SecondPreformattedText_MergedWithFirst" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.TextBlockTest.CreateEmpty" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.TextBlockTest.CreateWithText" executed="True" result="Success" success="True" time="0.000" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.TextBlockTest.DontMergePlainTextAndMarkups" executed="True" result="Success" success="True" time="0.002" asserts="3" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.TextBlockTest.MergePlainTextWithoutSeparater" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.TextBlockTest.OnlyConsumesTextAndMarkup" executed="True" result="Success" success="True" time="0.001" asserts="26" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.TextBlockTest.TextBlocksAreMergedWithNewLine" executed="True" result="Success" success="True" time="0.001" asserts="5" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.TextBlockTest.TextPropertyIsNullWithMultipleChildren" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.TextBlockTest.TextPropertyIsNullWithMultipleText" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.TextBlockTest.TextPropertyIsNullWithoutText" executed="True" result="Success" success="True" time="0.001" asserts="3" />
+                              <test-case name="Plainion.Wiki.UnitTests.AST.TextBlockTest.TextPropertyIsValidWithSingleChildOfTypeText" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                      <test-suite type="Namespace" name="Auditing" executed="True" result="Success" success="True" time="0.334" asserts="0">
+                        <results>
+                          <test-suite type="TestFixture" name="AuditingPageAccessDecoratorTests" executed="True" result="Success" success="True" time="0.325" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Auditing.AuditingPageAccessDecoratorTests.Create_WhenCalled_ActionWillBeLogged" executed="True" result="Success" success="True" time="0.258" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.Auditing.AuditingPageAccessDecoratorTests.Create_WhenCalled_DelegatesToPageAccess" executed="True" result="Success" success="True" time="0.021" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.Auditing.AuditingPageAccessDecoratorTests.Ctor_WithNullAuditingLog_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Auditing.AuditingPageAccessDecoratorTests.Ctor_WithNullPageAccess_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Auditing.AuditingPageAccessDecoratorTests.Delete_WhenCalled_ActionWillBeLogged" executed="True" result="Success" success="True" time="0.005" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.Auditing.AuditingPageAccessDecoratorTests.Delete_WhenCalled_DelegatesToPageAccess" executed="True" result="Success" success="True" time="0.003" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.Auditing.AuditingPageAccessDecoratorTests.Find_WhenCalled_DelegatesToPageAccess" executed="True" result="Success" success="True" time="0.012" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.Auditing.AuditingPageAccessDecoratorTests.GetPages_WhenCalled_DelegatesToPageAccess" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Auditing.AuditingPageAccessDecoratorTests.Update_WhenCalled_ActionWillBeLogged" executed="True" result="Success" success="True" time="0.004" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.Auditing.AuditingPageAccessDecoratorTests.Update_WhenCalled_DelegatesToPageAccess" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="DefaultAuditingTests" executed="True" result="Success" success="True" time="0.005" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Auditing.DefaultAuditingTests.Log_WhenCalled_ActionGetsLogged" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Auditing.DefaultAuditingTests.Log_WithNullAction_Throws" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                      <test-suite type="Namespace" name="DataAccess" executed="True" result="Success" success="True" time="1.090" asserts="0">
+                        <results>
+                          <test-suite type="TestFixture" name="AliasPageDescriptorTest" executed="True" result="Success" success="True" time="0.006" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.AliasPageDescriptorTest.Ctor_WithNullPageDescriptor_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.AliasPageDescriptorTest.Ctor_WithNullPageName_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.AliasPageDescriptorTest.Ctor_WithValidInput_PageNameAndPageDescriptorPropertiesShouldBeSet" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.AliasPageDescriptorTest.GetContent_WhenCalled_ReturnsContentOfOriginalPageDescriptor" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="DistributedPageAccess_WithRegistrationsTest" executed="True" result="Success" success="True" time="0.061" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccess_WithRegistrationsTest.Create_PageNameFromRegisteredPageAccess_ForwardsToRegisteredPageAccess" executed="True" result="Success" success="True" time="0.015" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccess_WithRegistrationsTest.Create_PageNameWithNonRegisteredNamespace_ForwardsToDefaultPageAccess" executed="True" result="Success" success="True" time="0.003" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccess_WithRegistrationsTest.Delete_PageNameFromRegisteredPageAccess_ForwardsToRegisteredPageAccess" executed="True" result="Success" success="True" time="0.004" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccess_WithRegistrationsTest.Delete_PageNameWithNonRegisteredNamespace_ForwardsToDefaultPageAccess" executed="True" result="Success" success="True" time="0.003" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccess_WithRegistrationsTest.Find_PageNameFromDefaultPageAccess_Succeeds" executed="True" result="Success" success="True" time="0.005" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccess_WithRegistrationsTest.Find_PageNameFromRegisteredPageAccess_Succeeds" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccess_WithRegistrationsTest.Find_PageNameWithNamespaceFromRegisteredPageAccess_Succeeds" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccess_WithRegistrationsTest.Find_UnknownPageName_Fails" executed="True" result="Success" success="True" time="0.006" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccess_WithRegistrationsTest.Update_PageNameFromRegisteredPageAccess_ForwardsToRegisteredPageAccess" executed="True" result="Success" success="True" time="0.003" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccess_WithRegistrationsTest.Update_PageNameWithNonRegisteredNamespace_ForwardsToDefaultPageAccess" executed="True" result="Success" success="True" time="0.003" asserts="0" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="DistributedPageAccessTest" executed="True" result="Success" success="True" time="0.025" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccessTest.Ctor_WithDefaultPageAccess_DefaultPageAccessPropertyShouldBeSet" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccessTest.Ctor_WithoutDefaultPageAccess_Throws" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccessTest.Pages_RegisteredPageAccess_ReturnsPagesFromAllPageAccesses" executed="True" result="Success" success="True" time="0.005" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccessTest.Pages_RegisteredPageAccess_ReturnsPagesWithPrefixedNamespace" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccessTest.Pages_RegisteredPageAccessWithSubNamespaces_SubNamespacesArePreserved" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccessTest.Pages_WithFilledDefaultPageAccess_ReturnsPagesFromDefaultPageAccess" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccessTest.Register_AlreadyRegisteredNamespace_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccessTest.Register_NewNamespaceValidPageAccess_ShouldBeRegistered" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccessTest.Register_WithEmptyNamespace_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccessTest.Register_WithNullNamespace_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccessTest.Register_WithNullPageAccess_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccessTest.Unregister_KnownNamespace_RemovesRegistration" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.DistributedPageAccessTest.Unregister_UnknownNamespace_DoesNothing" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="Namespace" name="FlatFile" executed="True" result="Success" success="True" time="0.764" asserts="0">
+                            <results>
+                              <test-suite type="TestFixture" name="FlatFilePageAccessTest" executed="True" result="Success" success="True" time="0.272" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageAccessTest.Create" executed="True" result="Success" success="True" time="0.050" asserts="7" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageAccessTest.CreateAlreadyExistingPageWillUpdateIt" executed="True" result="Success" success="True" time="0.039" asserts="7" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageAccessTest.CreateAndFindPageNameWithPath" executed="True" result="Success" success="True" time="0.037" asserts="6" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageAccessTest.CreateWithEmptyRepository" executed="True" result="Success" success="True" time="0.002" asserts="2" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageAccessTest.CreateWithInvalidPageName" executed="True" result="Success" success="True" time="0.008" asserts="0" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageAccessTest.CreateWithInvalidRepository" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageAccessTest.CreateWithoutRepository" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageAccessTest.CreateWithRepository" executed="True" result="Success" success="True" time="0.003" asserts="2" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageAccessTest.Delete" executed="True" result="Success" success="True" time="0.005" asserts="3" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageAccessTest.DeleteNonExistentFileWillFail" executed="True" result="Success" success="True" time="0.004" asserts="0" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageAccessTest.DeleteWithInMemoryPageDescriptor" executed="True" result="Success" success="True" time="0.004" asserts="2" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageAccessTest.Find" executed="True" result="Success" success="True" time="0.004" asserts="2" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageAccessTest.UpdateOnNonExistentPageWillCreateOne" executed="True" result="Success" success="True" time="0.039" asserts="7" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageAccessTest.UpdateShouldOverwritePage" executed="True" result="Success" success="True" time="0.059" asserts="5" />
+                                </results>
+                              </test-suite>
+                              <test-suite type="TestFixture" name="FlatFilePageDescriptorTest" executed="True" result="Success" success="True" time="0.083" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageDescriptorTest.Create" executed="True" result="Success" success="True" time="0.003" asserts="2" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageDescriptorTest.Create_WithInvlidPath_ShouldNotThrow" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageDescriptorTest.CreateWithoutName" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageDescriptorTest.CreateWithoutPath" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageDescriptorTest.GetContent" executed="True" result="Success" success="True" time="0.018" asserts="2" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageDescriptorTest.InvalidPageDescriptor" executed="True" result="Success" success="True" time="0.019" asserts="0" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageDescriptorTest.ValidateCachingOfContent" executed="True" result="Success" success="True" time="0.035" asserts="2" />
+                                </results>
+                              </test-suite>
+                              <test-suite type="TestFixture" name="FlatFilePageHistoryAccessTest" executed="True" result="Success" success="True" time="0.401" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageHistoryAccessTest.CreateVersionCreatesNewVersionFile" executed="True" result="Success" success="True" time="0.084" asserts="3" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageHistoryAccessTest.CreateVersionForPageNameWithPath" executed="True" result="Success" success="True" time="0.045" asserts="2" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageHistoryAccessTest.CreateVersionShouldCopyThePage" executed="True" result="Success" success="True" time="0.042" asserts="2" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageHistoryAccessTest.CreateWithoutRepository" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageHistoryAccessTest.Creation" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.DataAccess.FlatFile.FlatFilePageHistoryAccessTest.VersionsShouldBeRotatedIfLimitReached" executed="True" result="Success" success="True" time="0.222" asserts="2" />
+                                </results>
+                              </test-suite>
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="InMemoryPageDescriptorTest" executed="True" result="Success" success="True" time="0.024" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.InMemoryPageDescriptorTest.AddContent" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.InMemoryPageDescriptorTest.CreateWithContent" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.InMemoryPageDescriptorTest.CreateWithNullContent" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.InMemoryPageDescriptorTest.CreateWithoutContent" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.InMemoryPageDescriptorTest.CreateWithoutName" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="PageCacheTest_EmptyCache" executed="True" result="Success" success="True" time="0.014" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageCacheTest_EmptyCache.AddNotExistingPage" executed="True" result="Success" success="True" time="0.005" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageCacheTest_EmptyCache.CacheIsEmptyAfterCreation" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageCacheTest_EmptyCache.FindNonExistingPage" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageCacheTest_EmptyCache.IgnoreRemovalOfNonExistingPage" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="PageCacheTest_FilledCache" executed="True" result="Success" success="True" time="0.009" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageCacheTest_FilledCache.Clear_WhenCalled_CacheWillBeCleared" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageCacheTest_FilledCache.FindExistingPage" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageCacheTest_FilledCache.OverwriteExistingPage" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageCacheTest_FilledCache.RemoveExistingPage" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="PageRepositoryTest" executed="True" result="Success" success="True" time="0.146" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.ByPassCreateToPageAccess" executed="True" result="Success" success="True" time="0.018" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.ByPassDeleteToPageAccess" executed="True" result="Success" success="True" time="0.003" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.ByPassFindToPageAccess" executed="True" result="Success" success="True" time="0.010" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.ByPassPagesToPageAccess" executed="True" result="Success" success="True" time="0.002" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.ByPassUpdateToPageAccess" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.CleanupCacheOnDelete" executed="True" result="Success" success="True" time="0.073" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.CleanupCacheOnDeleteByPageName" executed="True" result="Success" success="True" time="0.002" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.CleanupCacheOnUpdate" executed="True" result="Success" success="True" time="0.004" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.CleanupCacheOnUpdateByPageName" executed="True" result="Success" success="True" time="0.002" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.CreateWithoutPageAccess" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.CreateWithoutPageParser" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.DeleteByPageName" executed="True" result="Success" success="True" time="0.003" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.FillCacheOnGet" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.GetNullIfPageNotExists" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.GetPageByPageName" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.DataAccess.PageRepositoryTest.GetWithNullDescriptor" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="EngineTests" executed="True" result="Success" success="True" time="0.038" asserts="0">
+                        <results>
+                          <test-case name="Plainion.Wiki.UnitTests.EngineTests.Create_WhenCalled_DelegatedToPageAccess" executed="True" result="Success" success="True" time="0.011" asserts="0" />
+                          <test-case name="Plainion.Wiki.UnitTests.EngineTests.Delete_WhenCalled_DelegatedToPageAccess" executed="True" result="Success" success="True" time="0.003" asserts="0" />
+                          <test-case name="Plainion.Wiki.UnitTests.EngineTests.Find_WhenCalled_DelegatedToPageAccess" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                          <test-case name="Plainion.Wiki.UnitTests.EngineTests.Render_ExistingPage_RendererCalled" executed="True" result="Success" success="True" time="0.009" asserts="0" />
+                          <test-case name="Plainion.Wiki.UnitTests.EngineTests.Render_NoSuchPage_ErrorPageHandlerCalled" executed="True" result="Success" success="True" time="0.007" asserts="0" />
+                          <test-case name="Plainion.Wiki.UnitTests.EngineTests.Update_WhenCalled_DelegatedToPageAccess" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="Namespace" name="Parser" executed="True" result="Success" success="True" time="0.122" asserts="0">
+                        <results>
+                          <test-suite type="TestFixture" name="ListParserTest" executed="True" result="Success" success="True" time="0.033" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.ListParserTest.FlatListWithIndention" executed="True" result="Success" success="True" time="0.025" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.ListParserTest.FlatListWithMultilineItems" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.ListParserTest.FlatListWithoutIndention" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.ListParserTest.ListTree" executed="True" result="Success" success="True" time="0.000" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.ListParserTest.ListTreeWithMultilineItems" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="MarkupParser_AttributeTest" executed="True" result="Success" success="True" time="0.012" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_AttributeTest.Parse_AttributeDefinitionWithoutValue_ShouldBeInterpretedAsDefinition" executed="True" result="Success" success="True" time="0.011" asserts="9" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="MarkupParser_LinkTest" executed="True" result="Success" success="True" time="0.026" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.AnchorDefinition" executed="True" result="Success" success="True" time="0.001" asserts="13" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.ExternalLinkInLinkMarkup" executed="True" result="Success" success="True" time="0.001" asserts="15" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.ExternalLinkInLinkMarkupWithText" executed="True" result="Success" success="True" time="0.000" asserts="15" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.FreeExternalLinkAtBeginning" executed="True" result="Success" success="True" time="0.000" asserts="12" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.FreeExternalLinkAtEnd" executed="True" result="Success" success="True" time="0.000" asserts="12" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.FreeExternalLinkÍnText" executed="True" result="Success" success="True" time="0.000" asserts="15" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.NonWikiWordAbbreviation" executed="True" result="Success" success="True" time="0.003" asserts="7" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.PageInLinkMarkup" executed="True" result="Success" success="True" time="0.000" asserts="15" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.PageInLinkMarkupWithQuestionmark" executed="True" result="Success" success="True" time="0.000" asserts="15" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.PageInLinkMarkupWithText" executed="True" result="Success" success="True" time="0.000" asserts="15" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.SimpleTextWithSlashIsNoWikiWord" executed="True" result="Success" success="True" time="0.001" asserts="7" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.SimpleWikiWord" executed="True" result="Success" success="True" time="0.000" asserts="15" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.SingleFreeExternalLink" executed="True" result="Success" success="True" time="0.000" asserts="9" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.UrlWithEscapes" executed="True" result="Success" success="True" time="0.000" asserts="9" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.UrlWithPath" executed="True" result="Success" success="True" time="0.000" asserts="9" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.UrlWithPathAndQueryString" executed="True" result="Success" success="True" time="0.000" asserts="9" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_LinkTest.WikiWordWithQuestionMark" executed="True" result="Success" success="True" time="0.002" asserts="15" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="MarkupParser_WikiWordsTests" executed="True" result="Success" success="True" time="0.005" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_WikiWordsTests.EmptyWikiWords" executed="True" result="Success" success="True" time="0.000" asserts="7" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.MarkupParser_WikiWordsTests.SomeWikiWords" executed="True" result="Success" success="True" time="0.002" asserts="15" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="QueryParserTests" executed="True" result="Success" success="True" time="0.009" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.QueryParserTests.Parse_CalledTwice_OldValuesAreResetted" executed="True" result="Success" success="True" time="0.001" asserts="3" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.QueryParserTests.Parse_MoreThanThreeExpressions_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.QueryParserTests.Parse_OneExpression_WhereExpressionWillBeSet" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.QueryParserTests.Parse_OneExpressionWithEscapedSemiColon_OnlyWhereExpressionWillBeSet" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.QueryParserTests.Parse_ThreeExpressions_WhereAndSelectAndFromExpressionsWillBeSet" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.QueryParserTests.Parse_TwoExpressions_WhereAndSelectExpressionsWillBeSet" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="StructureParser_HeadlineTest" executed="True" result="Success" success="True" time="0.009" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.StructureParser_HeadlineTest.BigHeadline" executed="True" result="Success" success="True" time="0.002" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.StructureParser_HeadlineTest.HeadlineWithEmptyLineAndParagraph" executed="True" result="Success" success="True" time="0.002" asserts="9" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.StructureParser_HeadlineTest.HeadlineWithParagraph" executed="True" result="Success" success="True" time="0.001" asserts="9" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.StructureParser_HeadlineTest.SmallHeadline" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="StructureParser_ListTest" executed="True" result="Success" success="True" time="0.005" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.StructureParser_ListTest.FlatListWithMultilineItemsAndParagraph" executed="True" result="Success" success="True" time="0.003" asserts="11" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.StructureParser_ListTest.HeadlineWithList" executed="True" result="Success" success="True" time="0.001" asserts="12" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="StructureParser_ParagraphTest" executed="True" result="Success" success="True" time="0.007" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.StructureParser_ParagraphTest.EmptyPage" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.StructureParser_ParagraphTest.ListIsNotAParagraph" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.StructureParser_ParagraphTest.MultiLineMultiParagraph" executed="True" result="Success" success="True" time="0.001" asserts="9" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.StructureParser_ParagraphTest.MultiLineParagraph" executed="True" result="Success" success="True" time="0.000" asserts="7" />
+                              <test-case name="Plainion.Wiki.UnitTests.Parser.StructureParser_ParagraphTest.OneLineParagraph" executed="True" result="Success" success="True" time="0.001" asserts="7" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                      <test-suite type="Namespace" name="Query" executed="True" result="Success" success="True" time="0.180" asserts="0">
+                        <results>
+                          <test-suite type="TestFixture" name="AttributeValueSelectClauseTests" executed="True" result="Success" success="True" time="0.013" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.AttributeValueSelectClauseTests.Select_MultipleAttributes_MultipleMatchCreated" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.AttributeValueSelectClauseTests.Select_NodeDoesNotBelongToPage_Throws" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.AttributeValueSelectClauseTests.Select_NodeIsAttribute_AttributeValueIsSelected" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.AttributeValueSelectClauseTests.Select_NodeIsNoAttribute_ReturnsNull" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="DynamicLinqWhereClauseTests" executed="True" result="Success" success="True" time="0.023" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.DynamicLinqWhereClauseTests.Where_ExpressionMatchesNode_ReturnsTrue" executed="True" result="Success" success="True" time="0.021" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.DynamicLinqWhereClauseTests.Where_ExpressionNotMatchesNode_ReturnsFalse" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="DynamicQueryExecutorTests" executed="True" result="Success" success="True" time="0.017" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.DynamicQueryExecutorTests.Execute_QueryNotAllowedOnPage_ReturnsEmptySet" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.DynamicQueryExecutorTests.Execute_WhereClauseMatches_ReturnsMatchingNodes" executed="True" result="Success" success="True" time="0.006" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.DynamicQueryExecutorTests.Execute_WhereClauseMatchesNot_ReturnsEmptySet" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="FulltextMatcherTests" executed="True" result="Success" success="True" time="0.019" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.FulltextMatcherTests.Ctor_WhenCalled_SearchTextPropertyIsSet" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-suite type="ParameterizedTest" name="Ctor_WithEmptySearchStrings_SearchTextPropertyIsSet" executed="True" result="Success" success="True" time="0.002" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.Query.FulltextMatcherTests.Ctor_WithEmptySearchStrings_SearchTextPropertyIsSet(null)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.Query.FulltextMatcherTests.Ctor_WithEmptySearchStrings_SearchTextPropertyIsSet(&quot;&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.Query.FulltextMatcherTests.Ctor_WithEmptySearchStrings_SearchTextPropertyIsSet(&quot;  \t   &quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                </results>
+                              </test-suite>
+                              <test-suite type="ParameterizedTest" name="Ctor_WithStringWithWhitespaces_SearchStringIsNotTrimmed" executed="True" result="Success" success="True" time="0.004" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.Query.FulltextMatcherTests.Ctor_WithStringWithWhitespaces_SearchStringIsNotTrimmed(&quot; a&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.Query.FulltextMatcherTests.Ctor_WithStringWithWhitespaces_SearchStringIsNotTrimmed(&quot;a &quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.Query.FulltextMatcherTests.Ctor_WithStringWithWhitespaces_SearchStringIsNotTrimmed(&quot;\tx\t&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                </results>
+                              </test-suite>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.FulltextMatcherTests.Match_PageDoesNotMatch_ReturnsEmptySet" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.FulltextMatcherTests.Match_PageNameMatches_ReturnsPageMatch" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.FulltextMatcherTests.Match_WithEmptySearchString_Matches" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.FulltextMatcherTests.Match_WithMatchingPageContent_ReturnsPageMatch" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="NoParentFromClauseTests" executed="True" result="Success" success="True" time="0.007" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.NoParentFromClauseTests.Ctor_WithNull_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.NoParentFromClauseTests.IsQueryFromPageAllowed_WithChild_ReturnsTrue" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.NoParentFromClauseTests.IsQueryFromPageAllowed_WithDifferentParent_ReturnsFalse" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.NoParentFromClauseTests.IsQueryFromPageAllowed_WithParent_ReturnsFalse" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.NoParentFromClauseTests.IsQueryFromPageAllowed_WithSibling_ReturnsTrue" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="PageSelectClauseTests" executed="True" result="Success" success="True" time="0.005" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.PageSelectClauseTests.Select_MultipleNodes_OnlyOnePageMatchCreated" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.PageSelectClauseTests.Select_NodeWithoutPageBody_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.PageSelectClauseTests.Select_NodeWithPageBody_PageMatchCreated" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="ParentSelectClauseTests" executed="True" result="Success" success="True" time="0.007" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.ParentSelectClauseTests.Select_MultipleNodesWithDifferentParent_MultipleMatchsCreated" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.ParentSelectClauseTests.Select_MultipleNodesWithSameParent_OnlyOneMatchCreated" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.ParentSelectClauseTests.Select_NodeWithoutParent_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.ParentSelectClauseTests.Select_NodeWithParent_ParentIsSelected" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="QueryCompilerTests" executed="True" result="Success" success="True" time="0.015" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryCompilerTests.Compile_AttributeValueSelect_ShouldResultInAttributeValueSelectClause" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryCompilerTests.Compile_DownOnlyFrom_ShouldResultInNoParentFromClause" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryCompilerTests.Compile_DownOnlyFromAndQueryDefWithoutPageBody_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryCompilerTests.Compile_EmptyFrom_ShouldResultInPageSelectClause" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryCompilerTests.Compile_EmptySelect_ShouldResultInPageSelectClause" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryCompilerTests.Compile_NonEmptyWhere_ShouldResultInDynamicLinqWhereClause" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryCompilerTests.Compile_ParentSelect_ShouldResultInParentSelectClause" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryCompilerTests.Compile_SectionSelect_ShouldResultInSectionSelectClause" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="QueryEngineTests" executed="True" result="Success" success="True" time="0.007" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryEngineTests.Query_WhenCalled_MatcherIsAppliedToAllPages" executed="True" result="Success" success="True" time="0.006" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="QueryIdentifierResolverTests" executed="True" result="Success" success="True" time="0.006" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIdentifierResolverTests.GetValue_ValidIdentifier_ReturnMethodCallToIterator" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                              <test-suite type="ParameterizedTest" name="HasValue_NullIdentifier_ReturnsFalse" executed="True" result="Success" success="True" time="0.001" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.Query.QueryIdentifierResolverTests.HasValue_NullIdentifier_ReturnsFalse(null)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.Query.QueryIdentifierResolverTests.HasValue_NullIdentifier_ReturnsFalse(&quot;&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                </results>
+                              </test-suite>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIdentifierResolverTests.HasValue_PrefixedIdentifier_ReturnsTrue" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIdentifierResolverTests.HasValue_QualifiedIdentifier_ReturnsTrue" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="QueryIteratorTests" executed="True" result="Success" success="True" time="0.021" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIteratorTests.All_NotAPageAttribute_ReturnsFalse" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIteratorTests.All_PageAttributeIsDefinition_ReturnsTrue" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIteratorTests.All_PageAttributeIsOnlyReferenced_ReturnsFalse" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIteratorTests.Defined_PageAttributeIsDefinedOnPage_ReturnsTrue" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIteratorTests.Defined_PageAttributeIsOnlyReferencedOnPage_ReturnsFalse" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIteratorTests.Defined_PageAttributeNotExistsOnPage_ReturnsFalse" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIteratorTests.GetIdentifierValue_CurrentNodeIsNoPageAttribute_ReturnsNull" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIteratorTests.GetIdentifierValue_MatchingPageAttributeDefinition_ReturnsAttributeValue" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIteratorTests.GetIdentifierValue_PageAttributeIsReference_ReturnsNull" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIteratorTests.GetIdentifierValue_UnknownPageAttributeDefinition_ReturnsNull" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIteratorTests.Linked_CurrentNodeHasNoBody_ReturnsFalse" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIteratorTests.Linked_CurrentPageIsLinked_ReturnsTrue" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.QueryIteratorTests.Linked_CurrentPageIsNotLinked_ReturnsFalse" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="ReferencesPageMatcherTests" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.ReferencesPageMatcherTests.Match_PageNotReferenced_ReturnsEmptySet" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.ReferencesPageMatcherTests.Match_PageReferenced_ReturnsEmptySet" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="SectionSelectClauseTests" executed="True" result="Success" success="True" time="0.010" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Query.SectionSelectClauseTests.Select_MultipleNodesWithDifferentSections_MultipleMatchsCreated" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.SectionSelectClauseTests.Select_MultipleNodesWithSameSection_OnlyOneMatchCreated" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.SectionSelectClauseTests.Select_NodeDoesNotBelongToPage_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.SectionSelectClauseTests.Select_NodeWithoutSection_CreatesPageMatch" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.Query.SectionSelectClauseTests.Select_NodeWithSection_SectionIsSelected" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                      <test-suite type="Namespace" name="Rendering" executed="True" result="Success" success="True" time="0.400" asserts="0">
+                        <results>
+                          <test-suite type="TestFixture" name="AbstractRendererTest" executed="True" result="Success" success="True" time="0.042" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.AbstractRendererTest.Render_NoRenderActionForNode_NothingGetsRendered" executed="True" result="Success" success="True" time="0.029" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.AbstractRendererTest.Render_OutsideRenderingProcess_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.AbstractRendererTest.Render_RenderActionForNodeAndBaseClass_RenderActionOfNodeCalled" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.AbstractRendererTest.Render_RenderActionOnlyForNodeBaseClass_RenderActionOfBaseClassCalled" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.AbstractRendererTest.RenderWithContext_WhenCalled_PostRenderingIsCalled" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.AbstractRendererTest.RenderWithContext_WhenCalled_PreRenderingIsCalled" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.AbstractRendererTest.RenderWithContext_WhenCalled_RenderingContextIsSetAndReset" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.AbstractRendererTest.RenderWithContext_WhenCalled_RootIsSetAndReset" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="AttributePreProcessingStepTests" executed="True" result="Success" success="True" time="0.007" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.AttributePreProcessingStepTests.RenderValueForDefinitionOnSamePage" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.AttributePreProcessingStepTests.RenderValueOnDefinitionIfConfigured" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="AttributeTransformationStepTests" executed="True" result="Success" success="True" time="0.010" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.AttributeTransformationStepTests.Transform_NoAttributeForRegisteredTransformers_NoTransformerCalled" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.AttributeTransformationStepTests.Transform_WithAttributeForRegisteredTransformers_TransformerGetsCalled" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="GenericRenderActionTests" executed="True" result="Success" success="True" time="0.007" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.GenericRenderActionTests.Render_CalledWithNodeOfWrongType_Throws" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.GenericRenderActionTests.RenderWithContext_WhenMethodLeft_ContextPropertyMustNotBeResetted" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="LambdaRenderActionTests" executed="True" result="Success" success="True" time="0.004" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.LambdaRenderActionTests.Render_CalledWithNodeOfWrongType_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.LambdaRenderActionTests.Render_WhenCalled_LambdaGetsCalled" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="LinkReformattingStepTests" executed="True" result="Success" success="True" time="0.014" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.LinkReformattingStepTests.Transform_ExistingPage_HtmlLinkWritten" executed="True" result="Success" success="True" time="0.003" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.LinkReformattingStepTests.Transform_ExternalUrl_HtmlLinkWritten" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.LinkReformattingStepTests.Transform_NonExistingPage_LinkWithNewActionWritten" executed="True" result="Success" success="True" time="0.001" asserts="9" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.LinkReformattingStepTests.Transform_PageWithNamespaceButOnlyAbsolutePageExists_FallBackToAbsolutePage" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.LinkReformattingStepTests.Transform_RelativeAndAbsolutePageExists_PreferRelativePageOverAbsolute" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.LinkReformattingStepTests.Transform_RelativePageName_HtmlLinkWritten" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.LinkReformattingStepTests.Transform_StaticUrl_HtmlLinkWritten" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.LinkReformattingStepTests.Transform_UrlWithoutText_HtmlLinkTextBecomesUrl" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="PageAttributeTransformerCatalogTests" executed="True" result="Success" success="True" time="0.196" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.PageAttributeTransformerCatalogTests.Composition_WhenHappened_WikiDefaultStepsFound" executed="True" result="Success" success="True" time="0.195" asserts="10" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="Namespace" name="PageAttributeTransformers" executed="True" result="Success" success="True" time="0.029" asserts="0">
+                            <results>
+                              <test-suite type="TestFixture" name="PageEditTransformerTests" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.Rendering.PageAttributeTransformers.PageEditTransformerTests.Transform_WhenCalled_AttributeReplacedByEditLink" executed="True" result="Success" success="True" time="0.001" asserts="3" />
+                                  <test-case name="Plainion.Wiki.UnitTests.Rendering.PageAttributeTransformers.PageEditTransformerTests.Transform_WithPageAsRoot_NameOfPageIsUsed" executed="True" result="Success" success="True" time="0.001" asserts="3" />
+                                </results>
+                              </test-suite>
+                              <test-suite type="TestFixture" name="PageNameTransformerTests" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.Rendering.PageAttributeTransformers.PageNameTransformerTests.Transform_WhenCalled_AttributeReplacedByPageName" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.Rendering.PageAttributeTransformers.PageNameTransformerTests.Transform_WithPageAsRoot_NameOfPageIsUsed" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                </results>
+                              </test-suite>
+                              <test-suite type="TestFixture" name="RecentEditsTransformerTests" executed="True" result="Success" success="True" time="0.010" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.Rendering.PageAttributeTransformers.RecentEditsTransformerTests.Transform_NoAuditLog_TransformsToNotApplicable" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.Rendering.PageAttributeTransformers.RecentEditsTransformerTests.Transform_WhenCalled_AttributeReplacedRecentEdits" executed="True" result="Success" success="True" time="0.007" asserts="16" />
+                                </results>
+                              </test-suite>
+                              <test-suite type="TestFixture" name="ReverseLinksTransformerTests" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.Rendering.PageAttributeTransformers.ReverseLinksTransformerTests.Transform_WhenCalled_AttributeReplacedByContent" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                  <test-case name="Plainion.Wiki.UnitTests.Rendering.PageAttributeTransformers.ReverseLinksTransformerTests.Transform_WithoutPageBody_Throws" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                </results>
+                              </test-suite>
+                              <test-suite type="TestFixture" name="SiteSearchTransformerTests" executed="True" result="Success" success="True" time="0.001" asserts="0">
+                                <results>
+                                  <test-case name="Plainion.Wiki.UnitTests.Rendering.PageAttributeTransformers.SiteSearchTransformerTests.Transform_WhenCalled_AttributeReplacedByPageName" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                                </results>
+                              </test-suite>
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="PageBuildingStepTests" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.PageBuildingStepTests.Transform_WhenCalled_PageIsBuildUp" executed="True" result="Success" success="True" time="0.002" asserts="5" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="QueryCompilationStepTests" executed="True" result="Success" success="True" time="0.007" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.QueryCompilationStepTests.Transform_NoQueryDefinition_AstRemainsUntouched" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.QueryCompilationStepTests.Transform_WithQueryDefinition_QueryDefinitionReplacedByCompiledQuery" executed="True" result="Success" success="True" time="0.002" asserts="3" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="QueryExecutionStepTests" executed="True" result="Success" success="True" time="0.006" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.QueryExecutionStepTests.Transform_NoCompiledQuery_AstRemainsUntouched" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.QueryExecutionStepTests.Transform_WithCompiledQuery_CompiledQueryReplacedByResults" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="RenderingPipelineTests" executed="True" result="Success" success="True" time="0.038" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.RenderingPipelineTests.Ctor_WhenCalled_RendererIsSet" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.RenderingPipelineTests.Ctor_WhenCalled_StepsAreSortedByStage" executed="True" result="Success" success="True" time="0.008" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.RenderingPipelineTests.Render_WhenCalled_RendererIsCalled" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.RenderingPipelineTests.Render_WhenCalled_StepsAreCalled" executed="True" result="Success" success="True" time="0.025" asserts="0" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="RenderingStepCatalogTests" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Rendering.RenderingStepCatalogTests.Composition_WhenHappened_WikiDefaultStepsFound" executed="True" result="Success" success="True" time="0.015" asserts="8" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="SiteConfigTests" executed="True" result="Success" success="True" time="0.001" asserts="0">
+                        <results>
+                          <test-case name="Plainion.Wiki.UnitTests.SiteConfigTests.Ctor_WhenCalled_HomePageNameIsSet" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="Namespace" name="Utils" executed="True" result="Success" success="True" time="0.060" asserts="0">
+                        <results>
+                          <test-suite type="TestFixture" name="AbstractPluginCatalogTests" executed="True" result="Success" success="True" time="0.008" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AbstractPluginCatalogTests.OnImportsSatisfied_NoImports_PluginsEmpty" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AbstractPluginCatalogTests.OnImportsSatisfied_WithImports_PluginsShouldBeFilled" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AbstractPluginCatalogTests.OnImportsSatisfied_WithOverridingImports_OverridingPolicyApplies" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="AstExtensionsTests" executed="True" result="Success" success="True" time="0.020" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.FindRelatedHeadline_HeadlineIsSibling_ReturnsThatHeadline" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.FindRelatedHeadline_HeadlineIsSiblingOfParent_ReturnsThatHeadline" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.FindRelatedHeadline_NoRelatedHeadline_ReturnsNull" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.GetFlattenedTree_NodeWithoutChildren_JustReturnsThatNode" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.GetFlattenedTree_WithFlatTree_JustReturnsTheChildren" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.GetFlattenedTree_WithNestedTree_JustReturnsTheChildren" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.GetNameOfPage_RootIsNotPageOrPageBody_ReturnsNull" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.GetNameOfPage_RootIsPage_ReturnsNameOfPage" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.GetNameOfPage_RootIsPageBody_ReturnsNameOfPageBody" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.IsLinkingPage_ExternalLink_ReturnsFalse" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.IsLinkingPage_LinkOutsiePageToNonRootedPageName_ReturnsFalse" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.IsLinkingPage_LinkToRootedPageName_ReturnsTrue" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.IsLinkingPage_RelativeLinkToOtherPage_ReturnsFalse" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.IsLinkingPage_RelativeLinkToPage_ReturnsTrue" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.IsLinkingPage_RootedLinkToOtherPage_ReturnsFalse" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstExtensionsTests.IsLinkingPage_RootedLinkToPage_ReturnsTrue" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="AstFinderTests" executed="True" result="Success" success="True" time="0.011" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstFinderTests.FirstOrDefault_NoNodeExists_ReturnsThisNode" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstFinderTests.FirstOrDefault_OneNodeExists_ReturnsThisNode" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstFinderTests.FirstOrDefault_RootIsTheSearchedNode_ReturnsRoot" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstFinderTests.FirstOrDefault_TwoNodeExists_ReturnsTheFirst" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstFinderTests.Where_NoNodeExists_ReturnsThisNode" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstFinderTests.Where_OneNodeExists_ReturnsThisNode" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstFinderTests.Where_TwoNodeExists_ReturnsTheFirst" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="AstWalkerTests" executed="True" result="Success" success="True" time="0.005" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstWalkerTests.Visit_NoMatchingNode_ActionNotCalled" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstWalkerTests.Visit_WholeTree_ActionCalledForWholeTree" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.AstWalkerTests.Visit_WithMatchingNodes_ActionCalledForThoseNodesOnly" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="ContentBuilderTests" executed="True" result="Success" success="True" time="0.005" asserts="0">
+                            <results>
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.ContentBuilderTests.BuildQueryResult_NoResults_ContentContainsNoResults" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.ContentBuilderTests.BuildQueryResult_WithResults_ContentContainsResults" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.ContentBuilderTests.BuildQueryResultNoBullets_NoResults_ContentContainsNoResults" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="Plainion.Wiki.UnitTests.Utils.ContentBuilderTests.BuildQueryResultNoBullets_WithResults_ContentContainsResults" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
