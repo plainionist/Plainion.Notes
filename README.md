@@ -1,18 +1,23 @@
-# Plainion.Notes
 
-Tools and libraries for wiki-like notes taking - favoring content over style
+Plainion.Notes repository contains several attempts to use the "power of plain text" 
+(pragmatic programmers) to "manage content" - say notes, links and small articles.
 
 
-## Plainion.Wiki 
+The repository contains
 
-simple Wiki engine which can render to Html and Xaml
+- a light-weight wiki engine
+- a light-weight HTTP server hosting the wiki engine to provide a pragmatic personal wiki
+- a WPF application embedding Chrome brower, the Wiki engine and the Http server in an "all-in-one" solution
+- a WPF sticky notes app in wiki style
 
-## Plainion.Notebook
+None of these solutions is in daily practical use :( because it is not simple enough. Switching from edit
+mode to rendering mode all the time doesnt give a great user experience.
 
-Wiki-style, multi-tab notebook application using Awesomium
+A simple, markup sensible and auto-completion-able rich text editor would probably more beneficial.
+(e.g. like in MS Outlook)
 
-## Plainion.Notes
 
-simple sticky notes app using 
+==> **This project is no longer under active development or maintenance!**
+
 
 
